@@ -733,4 +733,4581 @@ date : date & heure du système
 
 whoami : qui suis-je ?
 
+LINUX : Permissions sur fichiers et répertoires
 
+
+Comment lister les permissions (mode) sur des fichiers ou répertoires ?
+
+
+ls -l
+-rw-rw-r--  1 oki oki     0 avril  3 16:46 toto
+drwxrwxr-x  2 oki oki  4096 mars   4 21:48 x-process
+
+stat <fichier>
+  File: toto
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: fd01h/64769d	Inode: 8138908     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/     oki)   Gid: ( 1000/     oki)
+
+getfacl toto
+# file: toto
+# owner: oki
+# group: oki
+user::rw-
+group::rw-
+other::r--
+
+
+
+
+LINUX : Permissions sur fichiers et répertoires
+
+INTERPRETATION
+
+-rw-rw-r--  1 oki oki     0 avril  3 16:46 toto
+drwxrwxr-x  2 oki oki  4096 mars   4 21:48 x-process
+
+
+
+
+1er caractère
+d : directory
+c : character device
+l : symlink
+p : named pipe
+s : socket
+b : block device
+D : door
+
+: file
+
+
+
+
+
+LINUX : Permissions sur fichiers et répertoires
+
+INTERPRETATION
+
+-rw-rw-r--  1 oki oki     0 avril  3 16:46 toto
+drwxrwxr-x  2 oki oki  4096 mars   4 21:48 x-process
+
+
+
+
+par bloc de 3 : owner / group / other
+
+  r : read
+  w : write
+  x : executable
+
+
+
+
+notation en octal (cf stat):
+
+  4 = read (r)
+  2 = write (w)
+  1 = executable (x)
+
+  exemple : 765 ( rwx rw- r-x )
+
+
+
+
+
+
+LINUX : Permissions sur fichiers et répertoires
+
+COMMANDES DE MODIFICATION
+
+changement de mode/permissions
+
+
+chmod
+
+
+
+	* options : -R et -c
+
+
+
+
+changer le owner et le groupe
+
+
+chgroup
+chown
+
+
+
+
+LINUX : L'édition avec Vi/Vim
+
+
+ouverture d'un fichier
+
+
+vi toto
+
+
+
+mode ajout
+
+
+a
+
+
+
+mode insertion
+
+
+i
+
+
+
+
+LINUX : L'édition avec Vi/Vim
+
+
+mode visuel
+
+
+ctrl + v
+
+
+
+mode normal
+
+
+Esc
+
+
+
+enregistrer
+
+
+:w
+
+
+
+enregistrer et quitter
+
+
+:wq
+:wq!
+
+
+
+
+LINUX : L'édition avec Vi/Vim
+
+
+première et dernière ligne (en mode normal)
+
+
+gg
+G
+
+
+
+la recherche de caractères
+
+
+/
+
+
+
+la recherche d'une ligne
+
+
+:<num_ligne>
+
+
+
+
+LINUX : L'édition avec Vi/Vim
+
+
+undo/redo
+
+
+u
+:undo
+:redo
+
+
+
+copier/coller une ligne
+
+
+yy
+p
+
+
+
+copier coller plusieurs ligne
+
+
+3yy
+p
+
+
+
+
+LINUX : L'édition avec Vi/Vim
+
+
+copier/coller d'un numéro de ligne à un autre
+
+
+:set number
+11,35y
+p
+
+
+
+supprimer des lignes
+
+
+dd
+10dd
+
+
+
+remplacer des caracères
+
+
+:s///g
+:%s///g
+
+LINUX : Elevation de privilèges & su / sudo
+
+
+
+sur notre VM on a créé deux utilisateurs :
+
+  * xavki > user standard
+
+  * root > administrateur (super)
+
+
+
+
+
+
+LINUX : Elevation de privilèges & su / sudo
+
+COMMANDE : SU (Switch User)
+
+commande pour changer d'utilsateur ou jouer une commande
+
+
+su
+
+
+
+	* -c 
+
+	* - : ouvre un shell dans l'environnement du user
+
+	* -s : spécification d'un shell
+
+
+
+
+su -c "whoami" root
+su -c "ls /root/" - root
+su -c "env" root
+
+
+
+
+LINUX : Elevation de privilèges & su / sudo
+
+
+
+su c'est bien mais :
+
+  * tout ou rien : root sinon rien (ou droits peu facile et fins)
+
+  * tout temps changer d'utilisateur
+
+  * sécurité = éviter de disposer du user root
+
+
+
+
+
+
+LINUX : Elevation de privilèges & su / sudo
+
+COMMANDE : SUDO (Super User DO)
+
+parfois nécessaire de l'installer (en tant que root)
+
+
+apt update
+apt install sudo
+usermod -aG sudo xavki
+
+
+
+
+permet :
+
+  * lancer une commande en tan qu'un user (défaut root)
+
+  * permet une gestion fine des droits (par commande, users, groupes...)
+
+
+
+
+exemple :
+
+sudo ls /root
+
+
+
+
+LINUX : Elevation de privilèges & su / sudo
+
+
+configuration
+
+
+sudo cat /etc/sudoers
+sudo visudo
+sudo EDITOR=vim visudo
+sudo -l
+sudo -k
+sudo -i
+
+
+
+Defaults editor=/usr/bin/vim
+
+
+ <sys_source> = (<qui_cible>) 
+ <sys_source> = (<qui_cible>) , , 
+
+xavki ALL = (ALL) ALL
+xavki ALL = (ALL) NOPASSWD: /sbin/shutdown
+
+
+Note : toujours garder une session de root ouverte à coté
+
+
+LINUX : USERS & GROUPS
+
+
+point important pour sysadmin/devops/sre
+* indication sur la bonne gestion du parc
+
+
+
+souvent automatisée par des outils (ansible, puppet...)
+
+
+
+LINUX : USERS & GROUPS
+
+
+UID/GID
+
+
+
+* identifiants uniques
+
+
+
+
+* UID : 
+		* 0 pour root
+		* 0 - 100 : mode statique pour le système
+		* < 1000 : dynamique pour le système
+		* > 1000 : autres
+		* nobody : valeur max définie
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+* GID :
+		* pour les groupes
+		* 0 pour le groupe root
+		* 100 le groupe par défault (users)
+		* groupe utilisateur à partir de 1000
+
+
+
+
+LINUX : USERS & GROUPS
+
+GROUPES
+
+
+
+lister les groupes :
+
+
+getent group
+
+
+/etc/group
+
+
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+ajouter un groupe :
+
+
+groupadd
+
+
+
+	* -g : forcer le GID
+
+	* -r : groupe système
+
+
+
+Note :
+
+	* fichier de configuration de groupadd /etc/login.defs
+
+	* changer des fichiers ou répertoires chgrp ou chown
+
+	* si changement de GID pour un groupe : newgrp / groupmod
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+supprimer un groupe :
+
+
+groupdel
+
+
+
+
+LINUX : USERS & GROUPS
+
+USERS
+
+
+
+différentes actions possibles :
+
+  * useradd : ajout
+
+  * userdel : suppression
+
+  * usermod : modification
+
+
+
+
+
+
+similaires à : adduser, deluser
+
+
+
+LINUX : USERS & GROUPS
+
+
+
+useradd :
+
+  * /etc/default/useradd ou /etc/adduser.conf > configuration
+
+  * -s : spécifier le shell
+
+  * -c : commentaire
+
+  * -d : localisation de la home
+
+  * -g : le groupe de l'utilisateur
+
+  * -G : les groupes additionnels
+
+  * -k : localisation du squelette
+
+
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+sudo useradd usertest
+sudo useradd -c "Mon nom est personne"
+-d /home/mydir -g usertest2 -G docker -m 
+-s /usr/bin/sh
+
+
+Note : account désactivé par défaut > définir le password
+
+sudo passwd usertest
+su - usertest
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+
+comment lister les utilisateurs :
+
+  * /etc/passwd
+
+  * getent passwd
+
+  * compgen -u
+
+
+
+
+
+
+LINUX : USERS & GROUPS
+
+Note :
+
+	* si ajout/update de users en masse (bulk) : newusers					
+
+	* autre option via adduser
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+
+comment supprimer un utilisateur ?
+
+
+userdel :
+
+-r : suppression de la home
+
+
+
+deluser :
+
+  * --remove-home
+
+  * --backup-to
+
+  * --remove-all-files : attention
+
+
+
+
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+générer un password
+
+
+openssl rand -base64 12
+
+
+
+
+LINUX : USERS & GROUPS
+
+
+
+passwd la commande :
+
+  	* changer le mot de passe d'un user (ou du sien)
+
+  	* -e : force l'expiration (réinitialisation)
+
+  	* -l : locker un user
+
+  	* -n : minimum de jour entre les changements
+
+  	* -u : unlock
+
+  	* -x : maximum de validité
+
+  	* -w : nombre de jour avant la demande de changement
+
+  	* -S : statut (couplé à -a)
+
+
+
+LINUX : ENVIRONNEMENT
+
+
+
+tuto précédent : utilisateurs & permissions
+
+  * /home/<user>
+
+  * personnalisation par utilisateur (réel ou system)
+
+
+=> Environnement & Scripts de démarrage
+=> bien sûr tout cela s'enclenche à la connexion = login
+
+
+
+
+LINUX : ENVIRONNEMENT
+
+
+
+la commande login
+
+  * man login (files...)
+
+  * configuration /etc/login.defs (man !!)
+
+  * deux types de interactive (remote ou su) / non interactive (script distant)
+
+  * shell login vs non login (sh après auth)
+
+  * ex : non login et non interactive = script lancé dans la CLI
+
+
+
+
+
+
+LINUX : ENVIRONNEMENT
+
+
+
+après lancement de login :
+
+  * scripts (autocompletion etc)
+
+  * source de certaines variables (variables d'environnement)
+
+
+
+
+
+
+
+l'environnement :
+
+  * commande env (man !!) : -i / ajout variable
+
+  * commande export (help !!)
+
+
+
+
+
+
+LINUX : ENVIRONNEMENT
+
+
+
+cheminement des fichiers définissant l'environnement
+* pour un interactive login ;)
+
+  1- /etc/profile
+  2- /etc/profile.d/*
+  3- ~/profile ou ~/.bash_profile
+  4- ~/.bashrc (exception)
+  ...
+  x- ~/.bash_logout
+
+
+  LINUX : MOTD & ISSUE & LOGOUT
+
+
+
+messages à l'utilisateur :
+
+  * avant le login : issue
+
+  * après login : motd
+  		(Message Of The Day)
+
+  * à la sortie : .bash_logout
+
+
+=> "Man !!!"
+
+
+
+
+LINUX : MOTD & ISSUE
+
+ISSUE
+
+
+prelogin message
+
+
+attention aux informations affichées
+
+  * sécurité
+
+  * éviter les versions, noms de users, société...
+
+
+
+
+fichier à éditer :
+
+
+
+		/etc/issue
+
+
+
+
+LINUX : MOTD & ISSUE
+
+MOTD
+
+
+
+postlogin message
+
+
+fournir des infos à l'utilisateur (ex: environnement)
+
+
+
+
+fichier à éditer
+
+
+/etc/motd
+
+
+
+
+LINUX : MOTD & ISSUE
+
+
+script custom
+
+
+/etc/profile.d/01-motd.sh
+chmod +x /etc/profile.d/01-motd.sh
+
+
+
+#!/usr/bin/bash
+echo "Machine : "$(hostname)
+echo "IP : "$(hostname -I)
+
+
+
+
+supprimer pour un utilisateur
+
+
+touch ~/.hushlogin
+
+
+
+https://github.com/dylanaraps/neofetch
+
+
+LINUX : MOTD & ISSUE
+
+
+fichier à modifier
+
+
+~/.bashrc_logout
+
+
+
+exemple: compte à rebours
+
+
+for i in {1..11};do
+echo $((10-i))
+sleep 1s
+done
+
+
+LINUX : UMASK & SKEL ??
+
+
+
+suite des vidéos sur les permissions et l'environnement
+
+
+d'où viennent :
+* fichiers de la HOME
+* ~/.profile
+* ~/.bashrc
+
+
+
+
+LINUX : UMASK & SKEL ??
+
+SKELETON
+
+
+
+répertoire modèle
+
+
+définit dans la configuration de useradd /etc/default/useradd
+
+
+/etc/skel par défaut
+
+
+attention à bien maintenir les permissions/droits
+
+
+uniquement pour les nouveaux utilisateurs
+
+
+
+
+LINUX : UMASK & SKEL ??
+
+UMASK
+
+
+
+rappel : rwx rwx rwx
+
+  * 4 : r
+
+  * 2 : w
+
+  * 1 : x
+
+  ex: 
+
+  	* 7 : rwx
+
+  	* 6 : r-w
+
+  	* 5 : r-x
+
+
+
+
+
+
+LINUX : UMASK & SKEL ??
+
+
+
+les permissions appliquées par défaut :
+
+  * 666 : fichiers
+
+  * 777 : répertoires
+
+
+
+
+mais pourtant ? à la création les droits sont différents
+
+
+définit dans l'environnement
+
+
+
+
+LINUX : UMASK & SKEL ??
+
+
+
+on reprend notre cheminement à partir du login > au bash.rc
+
+  /etc/login.defs
+  /etc/profile
+  /etc/profile.d/*
+  /etc/bash.bashrc
+  ~/.profile
+  ~/.bash_profile
+  ~/.bashrc
+
+
+
+
+
+
+umask 002
+umask u=#,g=#,o=#
+
+
+
+LINUX : DATE & TIME
+
+
+date / heure : élément crucial
+* logs
+* systèmes distribués
+* différents calculs
+* gettimeoftheday
+* tellement important
+* NTP/PTP
+
+
+
+LINUX : DATE & TIME
+
+
+notion de format / localisation
+* yyyy/mm/dd...
+* CEST : Central European Summer Time
+* UTC : Universal Time Coordinated
+* RTC : Real Time Clock
+
+
+
+LINUX : DATE & TIME
+
+
+
+format epoch = nb secondes depuis 01/01/1970 00:00:00
+* problématique du 32bits en 2038 ;)
+* vive le 64bits
+
+
+
+temps de la machine VS temps du système
+* machine : horloge RTC / bios / pile...
+* système : prise en compte des fuseaux horaires...
+
+
+
+LINUX : DATE & TIME
+
+DATE/HEURE
+
+commande pour le système
+
+
+date
+timedatectl
+
+
+
+
+spécification de format
+
+
+date +%Y%m%d
+date +%Y%m%d-%H:%M:%S
+date +%T.%N
+
+
+
+
+LINUX : DATE & TIME
+
+MACHINE
+
+
+commande : hwclock
+
+
+réglage commande ou bios
+
+
+afficher l'heure
+
+
+
+sudo hwclock --show
+
+
+
+
+LINUX : DATE & TIME
+
+
+
+pour changer
+
+
+sudo hwclock --set --date "13 Jan 2022 20:08" --utc
+
+
+
+
+synchroniser matériel et système
+
+
+sudo hwclock --systohc
+
+
+et inversement
+
+sudo hwclock --hctosys
+
+
+
+
+LINUX : DATE & TIME
+
+TIMEZONE
+
+vérifier la timezone du système
+
+
+cat /etc/timezone
+timedatectl
+date +%Z  #%z
+ls -la /etc/localtime
+
+
+
+
+changer de timezone (2 méthodes)
+
+
+timedatectl list-timezones
+timedatectl set-timezone 
+
+sudo rm -rf /etc/localtime
+sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+
+
+
+
+LINUX : DATE & TIME
+
+DATE & HEURE
+
+changer ou définir la date et l'heure
+
+
+timedatectl set-time "2022-01-01 00:00:01"
+timedateclt set-date "2022-02-01"
+timedatectl set-time "00:30:01"
+
+
+
+
+ou avec date
+
+
+date -s HH:MM:SS
+date -s MM/JJ/AAAA
+
+
+
+
+LINUX : DATE & TIME
+
+NTP SERVICE
+
+timedatectl status
+timedatectl timesync-status
+timedatectl show-timesync
+
+
+LINUX : LES LOCALES
+
+Les spécificités des localisations :
+
+	* format de la date et heures
+
+	* premier jour de la semaine
+
+	* la monnaie
+
+	* le séparateur numérique (milliers)
+
+	...
+
+	=> Les Locales
+
+
+
+
+LINUX : LES LOCALES
+
+Comment trouver les locales ?
+
+	* /etc/default/locale
+
+	* commande : localectl
+
+	* commande : locale
+
+	* fr_FR.utf8 = langue.encodage
+
+
+Les valeurs :
+
+localectl list-locales
+locale -a
+
+
+
+
+LINUX : LES LOCALES
+
+Liste des principales locales :
+
+	* LANG : valeur si non défini dans "LC_*"
+
+	* LANGUAGE : définition de valeurs utilisables par défaut
+				* classé par ordre séparé de ":"
+
+	* LC_TIME : format des heures et des dates
+
+	* LC_COLLATE : classement lors de tris ou regexp
+
+	* LC_ALL : surcharge toutes les autres locales
+
+	* LC_NUMERIC : format numérique
+
+	* LC_MESSAGES : langues des mots et réponses
+
+	* LC_PAPER : format du papier
+
+	* LC_MONETARY : format monétaire
+
+	* LC_TELEPHONE / LC_ADDRESS / LC_MEASUREMENT / LC_NAME
+
+
+
+
+LINUX : LES LOCALES
+
+Détail sur une locale :
+
+locale -k LC_TIME
+locale -k LC_PAPER
+
+
+
+Commandes à retenir :
+
+man locale
+man localectl
+man update-locale
+
+
+
+
+LINUX : LES LOCALES
+
+Mise à jour :
+
+sudo update-locale LC_PAPER=en_US.UTF-8
+sudo localectl set-locale LC_PAPER=en_US.UTF-8
+
+
+
+Spécifique pour un utilisateur :
+
+~/.bashrc
+export LC_ALL=en_US.UTF-8
+
+
+
+
+LINUX : LES LOCALES
+
+Et un peu plus...
+
+pour la définition du clavier
+
+
+# sur console
+sudo loadkeys fr
+ou
+setxkbmap us
+setxkbmap fr
+
+
+LINUX : Type de Fichiers
+
+Types :
+
+	* Fichier standard  (-)
+
+	* Directory/Répertoire (d)
+
+	* Hard link (-)
+
+	* Symbolic link (l)
+
+	* Character/Block device (c) (b)
+
+	* Local domain socket (s)
+
+	* Named pipe (p)
+
+
+
+
+LINUX : Type de Fichiers
+
+FICHIER
+
+	* assemblage cohérent de Bytes
+
+	* tout est fichier sur linux
+
+	* texte, vidéos, musiques, images, données...
+
+
+
+déterminer le type de contenu :
+
+
+touch <fichier>
+vim <fichier>
+...
+file <fichier>
+stat <fichier>
+
+
+
+
+LINUX : Type de Fichiers
+
+DIRECTORY
+
+	* un fichier permettant de regrouper d'autres fichiers
+
+	* "." / ".."
+
+
+
+mkdir <répertoire>
+rmdir <répertoire>
+rm -r <répertoire>
+...
+stat <répertoire>
+
+
+
+
+LINUX : Type de Fichiers
+
+HARD LINK (link)
+
+	* différents des symbolic links (symlink)
+
+	* lien vers l'inode : adresse du contenu du fichier
+			* hard links = même adresse
+
+	* sur des fichiers ou des directory
+
+
+
+ln <source> <dest>
+rm <link>
+ls -i 
+stat <link>
+
+
+
+
+LINUX : Type de Fichiers
+
+SOFT LINK (symlink)
+
+	* différents des hard links (links)
+
+	* ne pointe pas vers le même inode (adresse)
+
+	* sur des fichiers ou directory
+
+
+
+ln <source> <dest>
+rm <link>
+ls -i 
+stat <link>
+
+
+
+
+LINUX : Type de Fichiers
+
+CHARACTER/BLOCK DEVICES
+
+	* devices (https://en.wikipedia.org/wiki/Device_file) 
+
+	* device file = interface avec un driver (disks, mémoire...)
+
+	* character = 
+			* accessible directement sans tampon (buffer/cache)
+			* caractère par caractère
+			* ex : terminal, imprimantes...
+
+	* block = 
+			* accessible via un tampon (cache)
+			* envoi/lecture par block (routine de cache)
+			* ex : la mémoire, les disques...
+			
+	* device file = interface avec un driver (disks, mémoire...)
+
+
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/admin-guide/devices.txt
+
+mknod xavki_c_device c 100 1
+mknod xavki_b_device b 100 1
+
+
+
+
+LINUX : Type de Fichiers
+
+LOCAL DOMAIN SOCKET
+
+	* socket = connexion entre processus (process)
+
+	* socket interne et socker réseau (connexion réseau)
+
+	* créé via un syscall (fonction système) spécifique "socket()"
+
+
+
+man 2 socket
+
+
+
+
+LINUX : Type de Fichiers
+
+NAMED PIPE (FIFO)
+
+	* similaire à un pipe (communication entre process)
+
+	* "pipe" = anonymous pipe "|"
+
+	* "named" pipe = un fichier
+
+	* sans stockage de la donnée
+
+
+
+mknode xavki_named_pipe p
+mkfifo xavki_fifo
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+3 commandes importantes pour agir sur les répertoires :
+
+	* cp
+
+	* mv
+
+	* tar
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+CP
+
+copie de fichiers
+
+
+cp <source> <destination>
+cp <source1> <source2> <destination>
+
+
+
+
+copie de répertoires
+
+
+cp -r <source> <destination>
+
+
+
+
+avec confirmation
+
+
+cp -ri <source> <destination>
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+
+avec backup si on écrase
+
+
+cp -b toto.txt titi.txt
+
+
+
+
+si pas les permissions d'écriture
+sur le fichier de destination
+
+
+cp -f toto.txt titi.txt
+
+
+
+
+préserver les droits et owner/group
+
+
+cp -p toto.txt titi.txt
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+MOVE
+
+
+
+déplacer/renommer fichiers et répertoires
+
+
+avec confirmation
+
+
+
+mv -i rep1 rep2
+
+
+
+
+ne pas écraser un fichier existant
+
+
+mv -n file1.txt rep2/
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+
+écraser si plus récent
+
+
+mv -u file1.txt rep2/
+
+
+
+
+créer un backup de la destination si existante
+
+
+mv -b file1.txt file2.txt
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+COMPRESSION/REGROUPEMENT
+
+
+
+créer un tarball et souvent gzipper
+
+
+avec tar (existe d'autres solution zip...)
+
+
+
+
+créer une tarball
+
+
+tar -cf mytarball.tar mydir/
+tar -cvf mytarball.tar mydir/
+
+
+
+extraction
+
+
+tar xvf mytar.tar
+
+
+
+
+avec compression/décompression
+
+
+tar -czvf mytarball.tar.gz mydir/
+tar -xzvf mytar.tar.gz
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+
+en format bz plus compressé
+
+
+tar -cjvf mytarball.tar.bz2 mydir/
+tar -xjvf mytar.tar.bz2
+
+
+
+
+juste lister le contenu et sa structure
+
+
+tar -tvf mytar.tar.gz
+
+
+
+
+LINUX : Copie / Déplacement / Compression de répertoires
+
+
+extraite juste un, des fichiers ou pattern
+
+
+tar -xzvf mytar.tar.gz mydir/toto.txt
+tar -xzvf mytar.tar.gz mydir/toto.txt --wildcards "\*.txt"
+
+
+
+
+ajouter juste un fichier
+
+
+tar -rvf mytar.tar.gz file1.txt
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+
+
+vidéo précédente => différents types de fichiers
+
+
+commande stat
+
+
+
+
+
+options :
+
+  -f : filesytème du fichier
+
+  -L : suivre les liens symboliques (symlink)
+
+
+
+
+
+
+stat sortie (output)
+
+
+  File: toto.txt
+  Size: 5         	Blocks: 8          IO Block: 4096   regular file
+Device: fd01h/64769d	Inode: 8165659     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/     oki)   Gid: ( 1000/     oki)
+Access: 2022-04-15 07:42:40.323132281 +0200
+Modify: 2022-04-15 07:42:40.323132281 +0200
+Change: 2022-04-15 07:42:40.323132281 +0200
+ Birth: -
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+INFORMATIONS
+
+	* File : le nom du fichier (où la représentation du symlink)
+	* Size : taille en bytes
+	* Block : nombre de blocks alloués
+	* IO Block : taille de chaque block
+	* type de fichier
+	* Device : le numéro de device
+	* Inode : numéro d'inode
+	* Links : nombre de hard links
+	* Access : permissions symbol et octal
+	* UID / GID
+	* Access : dernière date d'accès
+	* Modify : date de la dernière modification du contenu
+	* Change : date de changement du contenu et des attributs
+	* Birth : non utilisé sous linux
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+NOTION DE BLOCK
+
+
+	* un filesystème est découpé en morceaux = blocks
+
+	* chaque block device dispose d'une taille de blocks
+
+
+
+
+lsblk
+
+
+
+
+	* plusieurs niveaux de blocks
+			* disk block size (disque) ~ 512
+			* data block size (filesystème) ~ 4096 (4k)
+
+
+
+	Block Disk > Block FileSystem > Fichiers... ou blocks applicatifs
+
+
+
+
+	* si un block FS à une taille de 4096 bytes et un fichier 8 bytes
+			* => utilisation de 4096 bytes
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+
+nombre de blocks par device
+
+
+cat /proc/partitions
+cat /sys/block/nvme0n1/queue/physical_block_size 
+cat /sys/block/nvme0n1/queue/logical_block_size 
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+ou
+
+sudo fdisk -l /dev/nvme0n1
+Disk /dev/nvme0n1: 476,96 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: LENSE30512GMSP34MEAT3TA                 
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+
+
+choix de la taille des blocks
+
+  * petits fichiers = block size plus petits (mais perte lié aux méta-données)
+
+  * gros fichiers = large block (mais si petits fichiers = perte)
+
+  * trop de blocks = dépasser la limite gérable par le system
+
+
+
+
+les inodes sont des pointeurs vers les data blocks
+* inodes = noeuds d'index
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+NOTION INODES
+
+	* pointeurs vers les data blocks
+
+	* diposent de metadatas :
+			* device du fichier
+			* le numéro d'inode (unique dur sur un filesystem)
+			* type de fichier et mode
+			* GID/UID
+			* nombre de hard links
+
+	* taille du fichier
+
+	* nombre de blocks
+
+	* atime : dernier accès
+
+	* mtime : date de modification du contenu
+
+	* ctime : date de changement du contenu et des attributs
+
+
+
+
+LINUX : Inodes & caractéristiques d'un fichier
+
+PROCESS DE LECTURE D'UN FICHIER
+
+
+1 - lire l'inode
+
+
+
+
+2 - trouver l'inode dans la table des inodes
+
+
+
+
+3 - lire les informations de l'inode
+
+
+
+
+4 - récupération de la localisation des blocks
+			* block début/fin ou début/taille
+
+
+
+
+5 - lecture des datas blocks
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+généralement on utilise à minima du partitionnement
+
+
+
+peut être pratique (migration de serveur...)
+
+
+
+
+inconvénients :
+
+  * pas d'isolation (si le disque est plein perte VM)
+
+  * exemple : base de données, risque sécu sur /tmp, logs...
+
+  * partition : cas d'utilisation pour les dual boot (windows/linux...)
+
+
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+SUR VIRTUALBOX
+
+
+
+création du disque
+
+
+ajout du disque
+
+
+
+
+lister les disques
+
+
+sudo fdisk -l
+
+
+
+
+formater le disque
+
+
+sudo mkfs.ext4 /dev/sdb
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+le monter temporairement
+
+
+sudo mkdir /srv/xavki
+sudo mount -t ext4 /dev/sdb /srv/xavki
+df
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+DF
+
+* disk free
+
+* information sur l'utilisation des filesystems
+
+* la consommation des inodes
+
+* les montages actifs sur le système
+
+* page Wikipédia : https://fr.wikipedia.org/wiki/Df\_(Unix)
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+* colonnes :
+
+	* Filesystem : devices des filesystems
+
+	* 1k-block : taille en block de 1Kb
+
+	* Used : taille utilisée
+
+	* Available : taille disponible
+
+	* Use% : utilisation en pourcentage
+
+	* Mounted on : où le device est monté sur FHS
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+* options
+
+	* -a : affiche tous les montages
+
+	* -h : format de taille humain
+
+	* -i : consommation en inodes
+
+	* --total : dernière ligne (tail -1)
+
+	* -T : type de filesystem
+
+	* -t <ext4> : un type de filesystem
+
+	* -x <tmpfs> : exclure un type de filesystem
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+si persistence
+
+
+cat /etc/fstab
+/dev/sdb  /srv/xavki  ext4  defaults  0 0
+
+
+
+
+LINUX : Montage d'un disque sans partitionnement
+
+
+si démontage
+
+
+sudo umount /dev/sdb
+ou
+sudo umount /srv/xavki
+
+
+
+
+retirer le disque de la VM
+
+
+
+l'ajouter à une autre VM
+
+
+
+le monter sur l'autre VM
+
+
+sudo mkdir /tmp/xavki
+sudo mount -t ext4 /dev/sdb /tmp/xavki
+
+
+
+informations sur le filesystem
+
+
+sudo dumpe2fs -h /dev/sdb
+
+
+LINUX : DD
+
+COPIE :
+
+	* devices
+
+	* partitions ou volume logique
+
+	* disque ou zones de disque
+
+	* local ou distant (combinaison avec ssh)
+
+
+
+
+LINUX : DD
+
+
+copie de disk à disk
+
+
+dd if=/dev/sdb of=/dev/sdc
+dd if=/dev/sdb of=/dev/sdc status=progress
+
+
+
+
+LINUX : DD
+
+
+copie en format image (copie sur cd ou usb)
+
+
+dd if=/dev/sdb of=myimage.img
+
+
+
+
+LINUX : DD
+
+
+restauration
+
+
+dd if=myimage.img of=/dev/sdc
+
+
+
+
+LINUX : DD
+
+
+nettoyer
+
+
+dd if=/dev/zero of=/dev/sdc
+dd if=/dev/random of=/dev/sdc
+
+
+LINUX : Mount & Le fichier FSTAB
+
+Trouver les montages :
+
+	* mount 
+
+	* /etc/fstab
+
+	* /etc/mtab : fstab + commande mount
+
+
+Les options sont utilisables pour mount ou fstab
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+montage dans fstab
+
+
+<filesystème> <montage> <typeFS> <options> <dump> <pass>
+/dev/sdb   		 /srv/xavki   ext4  defaults  0  0
+UUID=xxxxxx    /srv/xavki   ext4  defaults  0  0
+#NAS
+//192.168.7.12/rep_a_partager   /srv/xavki   ext4  defaults  0  0
+#NFS
+10.10.0.10:/backups /var/backups  nfs      defaults    0       0
+
+
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+liste des UUID
+
+
+sudo blkid
+sudo lsblk -fe7
+
+
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+
+quelques options courantes :
+
+  * filesystème : disque, UUID, partition, volume logique, label
+
+  * montage : localisation dans le FSH (Filesystem Hierarchie)
+
+  * type de FS : ext2, ext3, ex4, xfs, btrfs, ntfs, swap...
+
+  * dump : jamais utilisé
+
+  * pass : 0 (rien) / 1 (avant 2) / 2 (ordre de priorité) par fsck
+
+
+
+
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+	* options : du montage 
+
+			* defaults : rw,exec,auto,suid,dev,nouser,async
+			* rw/ro : lecture écriture ou readonly
+			* exec/noexec : permet l'exécution ou non de binaires
+			* auto/noauto : monté au boot/reboot ou mount -a
+			* nofail (important) : permet le boot même sans le device
+			* discard : spécifique ssd (activation du trim ~ amélioration durée/perf)
+			* sync/async : i/o réalisé en synchrone ou asynchrone
+			* suid/nosuid : autorise les actions sur les bits suid/sgid
+			* noatime/relatime : mettre à jour ou pas la date accès à l'inode
+			* user/nouser : les user ou seul root peuvent monter le FS
+			* _netdev : device accessible par réseau (besoin du réseau avant de monter)
+			* uid= / gid= : spécification des users si hors linux (équivalence, default root)
+
+
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+je suis à la porte... suppression du volume
+
+
+init=/bin/bash
+mount -no remount,rw /
+#nano ... ajout nofail
+#passwd root
+exec /sbin/init
+
+
+
+
+LINUX : Mount & Le fichier FSTAB
+
+
+le mount bind ou comment monter un rep/fichier dans un autre ?
+
+
+/home/linux/bon-fichier   /mnt/read-only/mauvais-fichier     none       bind      0   0
+
+
+ou
+
+sudo mount --bind /srv/xavki test/
+
+
+astuce :
+
+findmnt
+
+
+
+toutes les options sont utilisables via mount (test et validation avant le fstab)
+
+
+LINUX : Première PARTITION
+
+Partitions :
+
+	* devices
+
+	* découpage d'un disque en sous éléments
+
+	* isolation et espace dédié (différents FS, OS, montages...)
+
+	* peut être redimensionnée (attenion quand même)
+
+
+
+
+LINUX : Première PARTITION
+
+Procédure simplifiée :
+
+
+1 - ajouter un disque
+
+
+
+
+2 - rechercher le disk : fdisk -l
+
+
+
+
+3 - Lancer fdisk sur /dev/<disk>
+
+
+
+
+4 - n pour créer une partition
+
+
+
+
+LINUX : Première PARTITION
+
+4 primaire + étendues
+primaire = partitions dans le MBR du disque (découverte au boot)
+étendue = fractionnement d'une partition primaire (conteneur)
+
+
+5 - p pour une partition primaire
+
+
+
+
+6 - t pour définir le type (linux = 83)
+
+
+
+
+7 - w enregistrer
+
+
+
+
+8 - cat /proc/partition partx /dev/<partition>
+
+
+
+
+9 - install xfsprogs
+
+10 - mkfs.xfs /dev/<partition>
+
+11 - création dir & montage
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+
+Disque > block> système d'exploitation > filesystème
+
+
+
+
+Journalisation : enregistrement des modifications (datas/metadatas)
+				* utile en cas de crash	
+
+
+
+
+Delayed allocation : les données sont stockées dans un buffer/tampon
+				* avant d'être écrites sur les data blocks
+				* permet de temporiser pour réduire la fragmentation...
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+EXT4
+
+
+* Exemple :
+
+	Disque = Boot Block + Block Group + .... + Block Group
+
+
+
+
+	Block Group = x blocks
+
+
+
+
+	Block Group = 
+			* Super Block (1) : infos du filesystème (nb blocks...)
+			* Group Descriptor(x) : localisation des bitmap et table inodes
+			* Data Block Bitmap (1) : carte de blocks dédiés aux blocks
+			* Inode Bitmap (1) : carte des blocks dédiés aux inodes
+			* Inode Table (n) : metadatas et données des fichiers
+			* Data Block (n) : données
+
+
+
+
+	Ex : Directory > Inode > X data blocks
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+
+* https://ext4.wiki.kernel.org/index.php/Main_Page
+
+* 4ème version des filesystem étendus
+
+* à partir du kernel 2.6.19
+
+* taille maximum d'un fichier 16TB
+
+* taille maxi du filesystem 1EB
+
+* nombre maximum de sous répertoire 64000
+
+* compatibilité de ext3 avec ext4
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+
+* défragmentation à chaud (sans démonter le disque) e4defrag
+
+* multi-block allocation = amélioration lecture/écriture
+
+* retarde allocation des blocks (avant de flusher sur disk)  
+	* basée sur les extents
+	* allocation plus rapide pour les fichiers
+	* autres FS : allocation immédiate (même si la donnée va en cache)
+
+* journal checksum : éviter la corruption de fichier
+	(si activation réduction de la performance)
+
+* vitesse de fsck améliorée
+
+* timestamp en nanoseconde
+
+* désactivation de la journalisation possible
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+XFS
+
+
+* adapté aux gros volumes de données et gros fichiers/répertoires
+
+* default sur les os RedHat
+
+* haute performance de lecture et d'écriture
+
+* allocation groupe ~ block groupes : mais plus gros que BG
+
+* allocation groupe fonctionnement similaire à un filesystème
+		* permet la paraléllisation et la scalabilité
+
+* journalisation des metadatas : amélioration de la consistence
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+
+* défragmentation à chaud
+
+* redimensionnement à chaud
+
+* direct I/O : bypass le cache du kernel dédié aux fichiers 
+		* moins de CPU
+
+* delayed allocation amélioration des performances : 
+	* quand la donnée est arrivée sur disque
+	* réduction de la fragmentation
+
+* quota et journalisation (en cas de crash)
+
+* extension des attibuts par fichier
+
+* taille maximum du filesystem 8EB
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+BTRFS
+
+* https://btrfs.readthedocs.io/en/latest/
+
+* maximum filesystem 16EB
+
+* maximum fichier 16EB
+
+* adapté pour les nombreux petits fichiers
+
+* allocation dynamique des inodes
+
+* permet de réaliser du RAID strippé, mirroré ou les deux
+
+* compression, lecture et écriture des snapshots (incrémental)
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+
+* COW : copy on write 
+
+* future de ext4
+
+* disques > storage pool > volumes (partitions) > filesystems
+
+* réalisation de snapshots
+
+* compression (zlib)
+
+* compatible SSD (trim...)
+
+* défragmentation à chaud
+
+
+
+
+LINUX : EXT4 vs XFS vs BTRFS vs ZFS
+
+ZFS
+
+* maximum filesystem 1ZB
+
+* volume manager + filesystem
+
+* maximum fichier 16 EM
+
+* multiple disques = pool de stockage > filesystems
+
+* ajout facile de disques poru être pris en compte par le pool
+
+* cow : copy on write (on n'écrase jamais la donnée)
+
+* snapshots du filesystem
+
+* RAID-Z : amélioration de l'intégrité de la data
+
+
+
+LINUX : LVM - Introduction
+
+LVM : Logical Volume Manager
+
+man 8 LVM
+
+
+
+Intérêts LVM :
+
+	* partitionnement limité sur la gestion des secteurs
+
+	* partitionnement risqué
+
+	* partiionnement difficile si plusieurs disques (cumul)
+
+	* LVM apporte un moyen snapshot (hormis certains FS)
+
+	* LVM apport un moyen de stripper ( parallélisation des écritures)
+
+	* LVM ne résoud pas la haute dispo des disques (niveau Raid)
+
+
+
+
+LINUX : LVM - Introduction
+
+SANS
+
+Disk > partitions > filesystem
+
+
+ 
+AVEC
+
+Disk > Physical Volumes > Volume Groups > Logical Volumes > FS
+
+
+ou
+
+Disk > partitions > PV > VG > LV > FS
+
+
+
+ATTENTION :
+Type de partition à passer de Linux (83) en Linux LVM (8e)
+
+
+LINUX : LVM - Introduction
+
+PHYSICAL VOLUME (PV)
+
+* représentation d'un disque physique, d'une partition, d'un volume RAID, baie SAN
+
+* une sort de déclaration des disk utilisable
+
+
+Principales commandes :
+
+* pvcreate: création d'un PV
+* pvdisplay ou pvs : afficher la liste des PV
+* pvremove : supprimer un PV
+* pvresize : redimensionner un PV
+* pvscan : lister les disques pour les PV
+
+
+
+
+LINUX : LVM - Introduction
+
+VOLUME GROUPE (VG)
+
+* couche logique contenant à minima 1 PV
+
+* permet d'agréger les PV 
+
+* utilisable via les volumes logiques (découpage...)
+
+
+Principales commandes :
+
+* vgcreate : créer un volume groupe
+* vgdisplay ou vgs : lister les VG
+* vgremove : supprimer un VG
+* vgreduce : pour réduire la taille des VG
+* vgrename : pour changer le nom d'un VG
+* vgconvert : changer les metadatas
+* vgextend : ajouter un PV à un VG existant
+* vgsplit : couper en 2 un VG
+* vgmerge : regrouper 2 VG en un
+* vgscan : lister les disques d'un LV
+
+
+
+
+LINUX : LVM - Introduction
+
+LOGICAL VOLUME (LV)
+
+* un à plusieurs LV par VG
+
+* un LV est utilisable pour un filesystem (volume)
+
+* fonctionnalités avancées : stripping, taille de blocs, snapshots...
+
+
+Principales commandes :
+
+* lvcreate: créer un volume logique (snapshot, stripping...)
+* lvdisplay ou lvs : afficher les information d'un ou des LV
+* lvremove : supprimer un LV
+* lvextend : agrandir un LV
+* lvconvert : pour restaurer un snapshot ou convertir
+* lvresize : redimensionner un LV
+* lvreduce : pour réduire la taille d'un LV
+* lvscan : scanner tous les disques d'un LV
+
+
+LINUX : LVM - Premier Volume Logique
+
+
+Disks/Partitions > PV > VG > LV > Volumes FS
+
+
+
+Exemple :
+
+* ajout de 2 disques 1G
+
+* monter un /srv/xavki de 1,5G
+
+* monter un /srv/demo de 200M
+
+
+
+
+LINUX : LVM - Premier Volume Logique
+
+1- création et ajout des disques sur virtualbox
+2- partitionnement des disques
+3- création des physical volumes (PV)
+
+pvcreate /dev/sdb1 /dev/sdc1
+pvdisplay
+
+
+
+
+LINUX : LVM - Premier Volume Logique
+
+4- création d'un volume unique vg_data
+
+vgcreate vg_data /dev/sdb1 /dev/sdc1
+vgdisplay
+
+
+5- création des volumes logiques lv_xavki & lv_demo
+
+lvcreate -n lv_xavki -L 1.5G vg_data
+lvcreate -n lv_demo -L 200M vg_data
+
+
+
+
+LINUX : LVM - Premier Volume Logique
+
+6- formatons le FS
+
+mkfs.ext4 /dev/vg_data/lv_xavki
+mkfs.ext4 /dev/vg_data/lv_demo
+
+
+7- montage des volumes
+
+mkdir /srv/{xavki,demo}
+
+
+
+/dev/vg_data/lv_xavki  /srv/xavki ext4 nofail 0 0
+/dev/vg_data/lv_demo  /srv/demo ext4 nofail 0 0
+
+mount -a
+df -h
+
+
+LINUX : LVM - Etendre un volume logique & ajout de disque
+
+
+Disks/Partitions > PV > VG > LV > Volumes FS
+
+
+
+
+Remplissons un volume
+
+
+df -h
+fallocate -l 1500M /srv/xavki
+df -h
+
+
+
+
+LINUX : LVM - Etendre un volume logique & ajout de disque
+
+
+vérifions si il reste l'espace allouable au niveau du VG
+
+
+vgs
+vgdisplay vg_data
+lvextend -L +300M /dev/vg_data/lv_xavki
+df -h
+
+
+
+
+redimensionnons le filesystem (ext4)
+
+
+resize2fs /dev/vg_data/lv_xavki
+df -h
+
+
+
+
+LINUX : LVM - Etendre un volume logique & ajout de disque
+
+
+et si on remplit de nouveau ??
+
+
+fallocate -l 1500M /srv/xavki
+
+
+
+
+ajoutons un nouveau disque
+
+
+pvcreate /dev/sdd1
+vgextend vg_data /dev/sdd1
+vgs
+vgdisplay vg_data
+lvextend -l +50%FREE /dev/vg_data/lv_xavki
+lvextend -l +100%FREE /dev/vg_data/lv_demo
+resize2fs /dev/vg_data/lv_xavki
+resize2fs /dev/vg_data/lv_demo
+
+
+
+LINUX : LVM - Réduire un volume logique
+
+
+Disks/Partitions > PV > VG > LV > Volumes FS
+
+
+
+
+lvs
+lvdisplay
+
+
+
+
+démonter le volume en question
+
+
+umount /srv/demo
+
+
+
+
+LINUX : LVM - Réduire un volume logique
+
+
+réaliser un fsck
+
+
+e2fsck -f /dev/vg_data/lv_demo
+
+
+
+
+réduire le filesystème à la taille souhaitée
+
+
+resize2fs /dev/vg_data/lv_demo 100M
+
+
+
+
+LINUX : LVM - Réduire un volume logique
+
+
+réduire le LV et resize
+
+
+lvreduce -L 100M /dev/vg_data/lv_demo
+resize2fs /dev/vg_data/lv_demo
+mount /srv/demo
+vgs
+
+LINUX : LVM - Créer et restaurer un Snapshot
+
+
+Disk > Partitions > PV > VG > LV > Volume FS
+
+
+
+
+créer un snapshot de LV
+
+
+touch /srv/xavki/demo1.txt
+lvcreate -L 1G -s -n snap_lv_data /dev/vg_data/lv_xavki
+sudo lvdisplay
+# lvs
+touch /srv/xavki/demo2.txt
+
+
+Note : attention au volume libre du VG
+
+
+LINUX : LVM - Créer et restaurer un Snapshot
+
+
+on peut vérifier
+
+
+sudo mount /dev/vg_data/snap_lv_data /mnt/snap_check
+ls /mnt/snap_check
+sudo umount /mnt/snap_check
+
+
+
+
+vérifier la taille utilisée
+
+
+sudo lvs /dev/vg_data/snap_lv_data
+
+
+
+
+LINUX : LVM - Créer et restaurer un Snapshot
+
+
+
+attention ne pas atteindre les 100% sinon plus de snap
+
+
+étendre un snapshot manuellement
+
+
+
+lvextend -L +100M /dev/vg_data/snap_lv_data
+
+
+
+
+LINUX : LVM - Créer et restaurer un Snapshot
+
+
+activer l'extension automatique des snapshots
+
+
+vim /etc/lvm/lvm.conf
+snapshot_autoextend_threshold = 100
+# Setting this to 100 disables automatic extension
+snapshot_autoextend_percent = 20
+
+
+
+
+LINUX : LVM - Créer et restaurer un Snapshot
+
+
+restauration du snapshot
+
+
+lvconvert --merge /dev/vg_data/snap_lv_data
+ls /srv/xavki/
+# parfois  lvchange -an et lvchange -ay
+
+
+
+LINUX : LVM - LV strippé
+
+
+Disk > Partitions > PV > VG > LV > Volume FS
+
+
+
+Intérêts ?
+
+	* RAID 0
+
+	* agrégation de disque en répartissant l'écriture/lecture
+
+	* performance (cumul iops)
+
+
+
+
+LINUX : LVM - LV strippé
+
+
+création des PV (physical volumes) - ex 2 partitions
+
+
+pvcreate /dev/sd[b-c]1
+
+
+
+
+LINUX : LVM - LV strippé
+
+
+création du volume group
+
+
+vgcreate -v vg_data /dev/sd[b-c]1
+
+
+
+
+LINUX : LVM - LV strippé
+
+
+création du LV strippé
+
+
+lvcreate -L 1G -n lv_strip -i 2 -I 4k /dev/vg_data
+lvdisplay -m /dev/vg_data/lv_strip
+lvs -o +devices
+dmsetup table
+
+
+
+
+LINUX : LVM - LV strippé
+
+
+puis montage
+
+
+mkfs.ext4 /dev/vg_data/lv_strip
+mount -t ext4 /dev/vg_data/lv_strip /srv/xavki
+
+
+
+
+test
+
+
+dd if=/dev/zero of=/srv/xavki/test.txt bs=1G count=1 oflag=direct
+
+
+
+LINUX : LVM - Remplacer un disque
+
+
+
+avant :
+/dev/sdb1 > pv > vg > lv > volume fs
+
+
+
+
+
+après
+/dev/sdc1 > pv > vg > lv > volume fs
+
+
+Exemple : remplacement d'un disque
+
+
+LINUX : LVM - Remplacer un disque
+
+
+Ajout d'un disque
+
+
+
+création de la partition (optionnelle)
+
+
+
+création du PV du nouveau disque
+
+
+
+LINUX : LVM - Remplacer un disque
+
+
+ajout du nouveau PV au VG existant
+
+
+pvextend vg_data /dev/sdc1
+
+
+
+
+démonter le volume
+
+
+umount /srv/xavki
+# si possible faire un backup
+
+
+
+
+LINUX : LVM - Remplacer un disque
+
+
+déplacement des extends de l'ancien PV vers les autres PV (nouveau)
+
+
+pvmove /dev/sdb1
+pvmove /dev/sdb1 /dev/sdc1
+
+
+
+
+retirer l'ancien PV du VG
+
+
+vgreduce vg_data /dev/sdb1
+
+
+
+
+remonter
+
+
+mount -t ext4 /dev/vg_data/lv_xavki /srv/xavki
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+Physical Extents = blocks LVM (taille > nombre)
+
+* petits LV = petits extents
+
+* gros LV = gros extents
+
+* default 4M (2M > 128M)
+
+* vgcreate -s (spécifier la taille des extents)
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+commençons à partir de 2 partitions
+
+
+pvcreate /dev/sdb1 /dev/sdc1
+vgcreate vg_data /dev/sdb1 /dev/sdc1
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+puis créons un LV mirroré
+
+
+lvcreate -L 200M -n lv_xavki -m1 /dev/vg_data
+lvs -o +devices -a
+
+
+Rq : -m nombre de copie
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+n'oublions pas le formatage de notre FS
+
+
+mkfs.ext4 /dev/vg_data/lv_xavki
+mount -t ext4 /dev/vg_data/lv_xavki /srv/xavki
+touch /srv/xavki/demo1.txt
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+test : remplacement d'un PV
+
+attention : si uniquement des LV mirrorés
+
+lvconvert --replace /dev/sdb1 /dev/vg_data/lv_xavki /dev/sdd1
+lvdisplay
+lvs
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+réparation du LV mirroré (sync extents)
+
+
+lvconvert --repair /dev/vg_data/lv_xavki
+lvs -a -o +devices
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+comment passer d'un LV mirroré à un LV simple ?
+
+
+lvconvert -m 0 /dev/vg_data/lv_xavki /dev/sdd1
+lvs -a -o +devices
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+inversement, comment mirroré un LV simple ?
+
+
+lvconvert -m 1 /dev/vg_data/lv_xavki /dev/sdc1
+
+
+
+
+LINUX : LVM - Comment mirrorer/copier un volume ?
+
+
+comment ajouter un PV pour ajouter un mirroring ?
+
+
+vgextend vg_data /dev/sdd1
+lvconvert -m 2 /dev/vg_data/lv_xavki /dev/sdd1
+
+
+LINUX : Les RAID
+
+RAID : Redundant Array of Independent Disks
+1978 : les origines du RAID 5 (IBM) et mention du RAID 1
+1987 : technologie RAID (Berkeley)
+
+
+LINUX : Les RAID
+
+Intérêts ?
+
+* suite à des coûts de stockage très bas
+
+* problématique de performances
+
+* redondance des données (si perte de disque ou erreurs)
+
+
+
+Prérequis :
+
+* avoir plusieurs disques
+
+* le nombre dépend du choix de RAID
+
+
+
+
+LINUX : Les RAID
+
+Type de contrôles :
+
+* logiciel
+
+		* moins coûteuse
+
+		* administration système
+
+		* compatibilité
+
+		* moins proche du matériel (erreurs...)
+
+		* consommation de ressources systèmes
+
+
+
+
+LINUX : Les RAID
+
+
+* matériel semi-matériel : 
+		routines en dehors de l'OS
+		pas indépendant
+
+		* éviter la dépendance au système d'exploitation
+
+		* idéal pour des fichiers externes à celui-ci
+
+		* consommaion de ressources (système non dédié)
+
+		* difficultés de changement de carte-mère
+
+
+
+
+LINUX : Les RAID
+
+
+* matériel :
+		processeur, mémoire, batterie dédiés
+
+		* détection de problèmes matériels
+
+		* préservation des ressources
+
+		* opérations en arrière plan (check, diag...)
+
+		* pas de compatibilité entre les controleurs
+
+		* le coût
+
+		* haute dispo nécessaire 
+
+
+
+
+LINUX : Les RAID
+
+RAID 0
+
+A1	A2
+B2	B1
+C1	C2
+
+* disques entrelacés 
+
+* strippé (cf vidéo LVM strippé)
+
+* 2 disques requis
+
+* amélioration sensible des performances
+
+* taille est égale au plus petit des disques (même capacité)
+
+* risque de perte x2 (perte 1 disque = perte totale)
+
+
+
+
+LINUX : Les RAID
+
+RAID 1
+
+A1	A1
+B1	B1
+C1	C1
+
+* mirroré (duplication)
+
+* 2 disques requis
+
+* résistance à la panne (erreurs ou perte totale)
+
+* pas de perte du service
+
+* performances variables en lectue (amélioration si multithread)
+
+* réduction de perf en écriture (légère)
+
+* capacité = plsu petit des disques
+
+* risque divisé par 2
+
+* augmentation du coût
+
+
+
+
+LINUX : Les RAID
+
+RAID 10
+
+A1	A1	|	A2	A2
+B2	B2	|	B1	B1
+
+* 4 disques requis
+
+* cumul de 2 RAID 0 sous un RAID 1
+
+* 2 mirrorés x 2 disques strippés
+
+* cumul des atouts des RAID 0 & 1 (perf et redondance)
+
+
+
+
+LINUX : Les RAID
+
+RAID 5
+
+A1	A2	P
+B1	P		B2
+P		C1	C2
+
+* 3 disques (n blocs de données & 1 parité par disque)
+
+* mirroré et strippé mais avec des informations de parités
+		* algo de parité
+
+* performance de lecture
+
+* écriture réduite
+
+* sur failure pas de perte de l'Array mais reconstruction
+
+* perte de données si perte de 2 disques
+
+
+
+
+LINUX : Les RAID
+
+RAID 6
+
+* idem RAID 5 mais 2 disques de parité
+
+
+LINUX : RAID 1
+
+Raid logiciel > commande mdadm
+
+
+sudo apt install mdadm
+
+
+
+
+sudo systemctl status mdmonitor
+sudo systemctl start mdmonitor
+
+
+
+
+LINUX : RAID 1
+
+
+pour un RAID 1
+
+
+sudo mdadm --create --verbose /dev/md0 --level 1 --raid-devices 2 /dev/sdb1 /dev/sdc1
+
+
+
+
+cat /proc/mdstat
+mdadm --detail /dev/md0
+
+
+
+
+LINUX : RAID 1
+
+
+vitesse de synchronisation
+
+
+sysctl -a | grep raid
+
+
+Note : KibiBytes > 1024 Bytes
+
+
+changer la valeur
+
+
+echo 50000 > /proc/sys/dev/raid/speed_limit_min
+
+
+ou
+
+sysctl -w dev.raid.speed_limit_min=50000
+
+
+
+
+LINUX : RAID 1
+
+
+de manière permanente
+
+
+# /etc/sysctl.conf
+dev.raid.speed_limit_min = 50000
+
+
+
+
+LINUX : RAID 1
+
+
+pour sauvegarder la configuration de la grappe RAID
+
+
+mdadm --detail --scan --verbose >> /etc/mdadm/mdadm.conf
+update-initramfs -u
+
+
+Note : important pour garder le numéro du device
+
+
+LINUX : RAID 1
+
+
+utilisation
+
+
+mkfs.ext4 /dev/md0
+#/etc/fstab
+
+
+LINUX : RAID 1 - Ajout, Suppression de disques, Manips
+
+
+ajouter un disque pour jouer :)
+
+
+
+sortir un disque de la grappe raid (array)
+
+
+mdadm --manage /dev/md0 --fail /dev/sdc1
+mdadm --manage /dev/md0 --remove /dev/sdc1
+
+
+
+
+remettre
+
+
+mdadm --manage /dev/md0 --re-add /dev/sdc1
+mdadm --manage /dev/md0 --add /dev/sdc1
+
+
+
+
+si nécessaire
+
+
+mdadm --stop /dev/md0
+mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdc1
+
+
+
+
+LINUX : RAID 1 - Ajout / Suppression de disques
+
+
+ajouter le nouveau disque
+
+
+mdadm --manage /dev/md0 --add /dev/sdd1
+mdadm -D /dev/md0
+cat /proc/mdstat
+
+
+
+
+si remplacement direct
+
+
+mdadm --manage /dev/md0 --add /dev/sde1
+mdadm --manage /dev/md0 --replace /dev/sdc1 --with /dev/sde1
+
+
+
+
+étendre
+
+
+mdadm --grow /dev/md0 --raid-devices 4 --add /dev/sde1
+
+
+LINUX : RAID 1 - Test recovery
+
+
+ajouter un disque pour jouer :)
+
+
+
+sortir un disque de la grappe raid (array)
+
+
+mdadm --manage /dev/md0 --fail /dev/sdc1
+mdadm --manage /dev/md0 --remove /dev/sdc1
+
+
+
+remettre
+
+
+mdadm --manage /dev/md0 --re-add /dev/sdc1
+mdadm --manage /dev/md0 --add /dev/sdc1
+mdadm --manage /dev/md0 --replace /dev/sdc1 --with /dev/sdd1
+mdadm --grow /dev/md0 --raid-devices 3 --add /dev/sdc1
+
+
+
+
+LINUX : RAID 1 - Test recovery
+
+
+stopper un array Raid
+
+
+mdadm --stop /dev/md0
+mdadm --stop --scan
+
+
+
+
+redémarrer un array
+
+
+mdadm --assemble /dev/md0
+mdadm --assemble --scan
+
+
+
+
+LINUX : RAID 1 - Test recovery
+
+
+ajouter un spare
+
+
+mdadm --manage /dev/md0 --add /dev/sdd1
+mdadm --add-spare /dev/md0 /dev/sde1
+mdadm -D /dev/md0 --scan >> /etc/mdadm/mdadm.conf
+update-initramfs -u
+
+
+
+
+test suppression du disque
+
+
+sfdisk -d /dev/sda | sfdisk /dev/sdb
+
+
+
+
+recovery
+
+
+mdadm --stop /dev/md0
+mdadm --assemble /dev/md0
+
+
+
+
+LINUX : RAID 1 - Test recovery
+
+
+passer en read-only
+
+
+umount /dev/md0
+mdadm --manage /dev/md0 --readonly
+mount /dev/md0
+
+
+
+
+repasser en lecture/écriture
+
+
+mdadm --manage /dev/md0 --readwrite
+
+
+
+
+forcer un rebuild
+
+
+mdadm --assemble --run --force --update=resync /dev/md0 /dev/sdb1 /dev/sdc1
+
+
+LINUX : RAID 0 - 5 - 10
+
+RAID 0
+
+mdadm --create --verbose /dev/md0 --level=0 --raid-devices=2 /dev/sdb /dev/sdc
+lsblk
+mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
+update-initramfs -u
+mkfs.ext4 /dev/md0
+mount /dev/md0 /srv/xavki
+#echo '/dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+df -h
+
+
+
+
+LINUX : RAID 0 - 5 - 10
+
+
+clean
+
+
+dd if=/dev/zero of=/dev/sda bs=1M count=1024
+mdadm --zero-superblock /dev/sdb1
+mdadm --remove /dev/md0
+cp /etc/mdadm/mdadm.conf /etc/mdadm/mdadm.conf.bak
+
+
+
+
+LINUX : RAID 0 - 5 - 10
+
+
+raid 5
+
+
+sudo mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sda /dev/sdb /dev/sdc
+
+
+
+
+LINUX : RAID 0 - 5 - 10
+
+
+raid 6
+
+
+sudo mdadm --create --verbose /dev/md0 --level=6 --raid-devices=4 /dev/sda /dev/sdb /dev/sdc /dev/sdd
+
+
+
+
+LINUX : RAID 0 - 5 - 10
+
+
+raid 10
+
+
+sudo mdadm --create --verbose /dev/md0 --level=10 --raid-devices=4 /dev/sda /dev/sdb /dev/sdc /dev/sdd
+
+
+LINUX : FSCK - Réparer/Vérifier le Filesystem
+
+
+vérifier un device
+
+
+fsck /dev/<device>
+
+
+
+
+forcer la vérification (même si pas nécessaire)
+
+
+fsck -f /dev/<device>
+
+
+
+
+LINUX : FSCK - Réparer/Vérifier le Filesystem
+
+
+vérifier les secteurs défectueux
+
+
+fsck -f -c /dev/<device>
+
+
+Note : si correction vous aurez une demande de confirmation
+-N : si juste check
+
+
+LINUX : FSCK - Réparer/Vérifier le Filesystem
+
+
+pour checker tous les devices du fstab (sauf la racine)
+
+
+fsck -AR -y
+
+
+
+
+LINUX : FSCK - Réparer/Vérifier le Filesystem
+
+
+comment faire un fsck sur la racine sur ancienne machine
+
+
+touch /forcefsck
+reboot
+ls /
+
+
+
+
+sur une nouvelle machine via la cmdline (lancement kernel)
+
+
+fsck.mode=force fsck.repair=yes
+/etc/default/grub
+update-grub
+
+
+
+
+LINUX : FSCK - Réparer/Vérifier le Filesystem
+
+
+fréquence de vérification
+
+tune2fs -c 50 -i 2w /dev/hda1
+
+LINUX : Recap RAID & LVM & DEVICE
+
+
+Storage Device : disque SSD, HDD, RAID ARRAY
+* accès à des block devices
+* superblock : metadatas relatives au filesystem
+
+
+
+Partition : sous ensemble d'un device de stockage
+* primaire/étendue
+* typée
+
+
+
+LINUX : Recap RAID & LVM & DEVICE
+
+
+RAID Array (Redundant Array of Independent Disks)
+* redondance & aggrégation
+* physique ou logiciel ou mixte
+* différent type : 0,1,5,10 ...
+
+
+
+LVM : PV + VG + LV
+
+
+
+Filesystem : comment stocker fichiers, répertoires, journalisation...
+
+
+
+LINUX : Recap RAID & LVM & DEVICE
+
+
+┌──►   FILESYSTEM ◄──────┐◄──┐◄───┐
+│                        │   │    │
+│                        │   │ LV │
+│                        │   │    │
+│                        │   │    │
+│                        │   │ VG │
+├────────┬─►  RAID  ─────┼───┤    │
+│        │               │   │    │
+│        │               │   │ PV │
+│        │               │   │    │
+│                        │   │    │
+├─────► PARTITIONS  ─────┴───┘    │
+│                                 │
+                                  │
+
+
+DISKS ──────────────────────────────┘
+
+
+LINUX : I/O
+
+
+
+I/O = Input/Output
+
+
+Disk IO (sous toute leur forme)
+
+
+stockage = HDD / SSD / NAS (NET)
+
+
+Input = écriture
+
+
+Output = lecture
+
+
+
+
+LINUX : I/O
+
+
+data transfert
+
+Les Mesures :
+
+
+IOPS => lecture/écriture par seconde (en nombre)
+
+
+KB/s (MB/s) => un débit (quantité par seconde)
+
+
+
+
+point ultra important de performance :
+* base de données
+* traitement de tâches généralement
+
+
+
+LINUX : I/O
+
+Représentation :
+
+USER > Kernel > Mémoire <-> Disks
+
+
+
+
+Mémoire <-> Disks
+	* Buffer = écriture
+	* Cache  = lecture
+
+
+
+
+LINUX : I/O
+
+Impacts importants :
+
+	* lenteurs applications
+
+	* saturation des CPU 
+
+	* saturation de la RAM
+
+
+
+Indicateur principal :
+
+	* iowait (mesure du temps d'attente CPU)
+
+	* attente de lecture/écriture IO
+
+	* wa (top...) , %iowait (iostat), wait...
+
+	* processus status = D (tâche non interruptible)
+
+
+
+
+LINUX : I/O
+
+
+
+Facteurs :
+
+  * noatime (fstab) : pas de timestamp (atime)
+  	https://opensource.com/article/20/6/linux-noatime
+
+  * développement applicatif (APM est ton ami)
+
+  * garder tout à jour :) (système, applicatif, firmwares...)
+
+  * type de disk (HDD / SSD)
+
+  * type de connectique pour SSD (SAT/NVMe)
+
+  * nombre de disque dans une grappe RAID
+
+  * RAID Level ( 0 = strip, x2, x4... )
+
+  * type random/sequential
+
+  * IOPS
+
+  * taux de lecture et d'écriture
+
+  * taille des blocs (différents niveaux)
+
+
+
+
+
+
+LINUX : I/O
+
+FIO > benchmark
+
+Quelques calcules :
+
+* si j'ai un disk capable d'écrire 155 MB/s avec des blocs 4K
+
+	> 155 * 1024 / 4k = 39680 IOPS
+
+* inversement mon disque a pour capacité 40k IOPS et blocs 4k
+
+	> 40000 * 4k / 1024 = 156,25 MB/s
+ 
+
+LINUX : I/O - iostat
+
+
+
+variation d'utilisation en fonction de l'OS
+
+
+iowait :
+* pourcentage (10%)
+* x% du CPU est destiné à attendre
+* io = lecture/écriture
+* si multi processeurs/cores = moyenne
+
+
+depuis le boot de la machine (tips en fin de vidéo)
+
+
+ajout d'un nombre fréquence en secondes
+
+
+
+
+LINUX : I/O - iostat
+
+
+-c : seulement les stats CPU
+
+
+iostat -c
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           9,09    0,10    3,47    1,72    0,00   85,62
+
+
+Note : idem top commande
+
+%user : pourcentage d'utilisation CPU utilisé par le userland (programmes...)
+%nice : pourcentage d'utilisation CPU avec une nice priorité (cf tutos process)
+%system : pourcentage CPU utilisé par le CPU (noyau)
+%iowait : pourcentage CPU en attente d'IO
+%steal : pourcentage CPU en attente d'un autre CPU
+%idle : pourcentage du CPU qui se tourne les pouces !!
+
+
+
+
+LINUX : I/O - iostat
+
+
+
+-h : human readable
+
+
+-d : uniquement les statistiques des devices
+
+
+-x : statistiques détaillées (xd)
+
+
+-p : en spécifiant le device
+
+
+-m : données en mega
+
+
+-t : afficher l'heure
+
+
+
+
+LINUX : I/O - iostat
+
+interval
+
+
+iostat 3 2
+
+
+Note : par défaut depuis le démarrage de la machine
+
+
+LINUX : I/O - iostat
+
+rs : lectures réalisées par seconde
+ws : écritures réalisées par seconde
+	tps : transferts par seconde (requêtes d'IO par seconde > agrégation logique)
+	%util : pourcentage de temps d'utilisation du disque (100% saturé)
+
+tm_act : pourcentage du temps pendant lequel le disque est occupé
+kbps : nombre de KB transférés à partir du disque / vers le disque
+msps : moyenne du temps de recherche (si les disques supportent ce
+compteur)
+kB_read (/s) : volume/blocks lus en KB sur le device
+kB_wrtn (/s) : volume/blocks écrits en KB sur le device
+kB_dscd (/s) : volume/blocks rejetés par le device
+
+
+LINUX : Udev - Manager les devices
+
+
+
+dev : devices (périphériques) > /dev (répertoire dynamique)
+
+
+Udev = Userspace /dev (devices)
+
+
+track les évènements du kernel
+
+
+avec le kernel > 2.6 : avant devfs
+
+
+udevd = daemon
+
+
+
+
+LINUX : Udev - Manager les devices
+
+Multiples enjeux :
+
+	* enjeu desktop (plug souris, etc)
+
+	* nom des devices
+
+	* abstraction du péripériques
+
+	* droits sur les périphériques
+
+
+
+
+LINUX : Udev - Manager les devices
+
+
+
+rules :
+
+  * /etc/udev/rules.conf : conf générale
+  * /etc/udev/rules.d/ : règles perso
+  * /lib/udev/rules.d/ : règles générales
+
+
+
+
+
+
+ls /dev/disk
+ls -l /dev/disk/by-id
+
+
+
+LINUX : Udev - Manager les devices
+
+man udev
+
+udevadm :
+
+* monitor : écoute des évènements au niveau du kernel
+
+* control : modification d'un état
+
+* trigger : lance un signal
+
+* test : récupère le résultat de l'exécution
+
+
+
+
+LINUX : Udev - Manager les devices
+
+
+exemples :
+
+
+udevadm monitor --udev
+udevadm info /dev/nvme0n1
+udevadm info -a /dev/nvme0n1
+udevadm test /sys/block/sdb
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+udevadm :
+
+* monitor : écoute des évènements au niveau du kernel
+
+* control : modification d'un état
+
+* trigger : lance un signal
+
+* test : récupère le résultat de l'exécution
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+Les Keywords (cumulatif séprateur ","):
+
+* ACTION : sur quel action du device agir 
+	add / remove / change
+
+* DEVPATH
+
+* KERNEL : nom de l'évènement du device (généralement device)
+
+* NAME : pour le nom des interfaces réseaux
+
+* PROGRAM : sélectionner sur une commande
+
+* RUN : lance de commande
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+Recherche dans le devpath (les éléments des parents)
+
+* KERNELS : recherche dans le devpath
+
+* SUBSYSTEMS : recherche dans le devpath le nom d'un sous système
+
+* DRIVERS : recherche le driver du device dans le subpath
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+Utilisation des attributs
+
+* ATTR{<attribut>} : recherche dans les attributs du device
+
+* ATTRS{<attributs>} : idem dans les parents
+
+* ENV{<propriété>) : utilisation de la propriété du device
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+
+udevadm monitor --udev
+udevadm info -a /dev/nvme0n1
+udevadm info -a /dev/nvme0n1 -q property
+udevadm info -a /dev/nvme0n1 -q all
+udevadm info -a /dev/nvme0n1 -q all --help
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+Les opérateurs:
+
+* "==" : égal à
+
+* "!=" : différent de
+
+* "="  : affecte/définit des valeurs
+
+* "+=" : ajoute des éléments à une variable déjà définie
+
+* "-=" : retire la valeur de la variable
+
+* ":=" : définit une valeur en dernière position et empêhce tout changement
+
+
+
+
+LINUX : Udev - Démo - Créer un nouveau SymLink
+
+Petit exemple : création d'un nouve device pointant vers /dev/sdb
+
+notre règle
+
+
+KERNEL=="sd*", ENV{ID_SERIAL}=="xxxxx", SYMLINK+="sdx", RUN+="/bin/sh -c '${date +%Y%m%d} - echo SDX created' > /tmp/xavki.log"
+
+
+
+pour tester la règle
+
+
+udevadm trigger --typ devices --action change
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+SCSI = Small Computer System Interface
+Protocole dédié aux interfaces de stockage (disques)
+C'est une connexion : carte dédiée / bus (identification)
+
+Les Keywords (cumulatif séprateur ","):
+
+* ACTION : sur quel action du device agir 
+	add / remove / change
+
+* DEVPATH
+
+* KERNEL : nom de l'évènement du device (généralement device)
+
+* NAME : pour le nom des interfaces réseaux
+
+* PROGRAM : sélectionner sur une commande
+
+* RUN : lance de commande
+
+
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+Recherche dans le devpath (les éléments des parents)
+
+* KERNELS : recherche dans le devpath
+
+* SUBSYSTEMS : recherche dans le devpath le nom d'un sous système
+
+* DRIVERS : recherche le driver du device dans le subpath
+
+
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+Utilisation des attributs
+
+* ATTR{<attribut>} : recherche dans les attributs du device
+
+* ATTRS{<attributs>} : idem dans les parents
+
+* ENV{<propriété>) : utilisation de la propriété du device
+
+
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+
+udevadm monitor --udev
+udevadm info -a /dev/nvme0n1
+udevadm info -a /dev/nvme0n1 -q property
+udevadm info -a /dev/nvme0n1 -q all
+udevadm info -a /dev/nvme0n1 -q all --help
+
+
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+Les opérateurs:
+
+* "==" : égal à
+
+* "!=" : différent de
+
+* "="  : affecte/définit des valeurs
+
+* "+=" : ajoute des éléments à une variable déjà définie
+
+* "-=" : retire la valeur de la variable
+
+* ":=" : définit une valeur en dernière position et empêhce tout changement
+
+
+
+
+LINUX : Udev - Démo - Créer un device custom
+
+Petit exemple : récupérer l'identifiant scsi pour repérer un disque et lui affecter un device
+
+récupération de l'id scsi
+
+
+/usr/lib/udev/scsi_id -g -u /dev/sdb
+
+
+
+notre règle
+
+
+KERNEL=="sd*",
+ENV{DEVTYPE}=="disk",
+PROGRAM=="/usr/lib/udev/scsi_id -g -u -d $devnode",
+RESULT=="xxx",
+RUN+="/bin/sh -c 'mknod /dev/xavki b $major $minor; chown xavki:xavki/dev/xavki; chmod 660 /dev/xavki'"
+
+
+
+pour tester la règle
+
+
+udevadm trigger --typ devices --action change
+
+
+LINUX : Device Mapper
+
+https://en.wikipedia.org/wiki/Device_mapper
+DM = Device Mapper
+
+DM =
+
+* framework fourni par le kernel linux
+
+* mapper des blocks devices physique
+
+* en blocks devices virtuels pour l'utilisateur
+
+* possibilité de crtyper les disques
+
+* les fondements de LVM2
+
+
+Mapper = table de mappage
+
+* un device dispoe d'un nom (sda) et par le couple major/minor (256:1)
+
+
+
+
+LINUX : Device Mapper
+
+DMSETUP
+
+
+liste des devices
+
+
+dmsetup ls
+dmsetup ls --tree #lsblk
+
+
+
+
+afficher la table de mappage
+
+
+dmsetup table
+
+
+
+
+résumé global de device mapper
+
+
+dmsetup info #lvdisplay ou lvs
+dmsetup info -c vgubuntu-root
+
+
+
+
+LINUX : Device Mapper
+
+
+affichage des dépendances (couple major/minor)
+
+
+dmsetup deps
+
+
+
+
+renommer des device
+
+
+dmsetup rename deb1--vg-tmp deb1--vg-temp
+
+
+
+
+LINUX : Device Mapper
+
+
+suspendre les I/O
+
+
+dmsetup suspend --nolockfs deb1--vg-tmp
+dmsetup suspend --noflush deb1--vg-tmp
+dmsetup info
+
+
+
+
+réactiver
+
+
+dmsetup resume deb1--vg-tmp
+
+
+
+
+création
+
+
+echo "0 1024 linear /dev/sdb1 0" | dmsetup create toto
+
+
+https://docs.kernel.org/admin-guide/device-mapper/index.html
+
+
+
+LINUX : Pseudos Devices
+
+
+
+/dev/null
+
+
+/dev/zero
+
+
+/dev/full
+
+
+/dev/random
+
+
+/dev/loop
+
+
+man null
+
+
+LINUX : Pseudos Devices
+
+
+/dev/null : pas d'output, pas de valeur
+
+
+cat /dev/null
+ls > /dev/null
+ls nothing 2> /dev/null
+dd if=/dev/null of=test.txt count=1 bs=1024
+ls -a
+
+
+
+
+LINUX : Pseudos Devices
+
+
+/dev/zero : flux continu de valeur null (ASCII 0 = 0x00) c'est à dire de 0 en binaire
+
+
+man ascii
+cat /dev/zero
+dd if=/dev/zero of=/opt/zero.txt bs=2048 count=2048
+dd if=/dev/zero of=test.txt count=1 bs=1024
+ls -a
+
+
+Note : American Standard Code for Information Interchange
+Codage de caractères
+
+
+LINUX : Pseudos Devices
+
+
+/dev/full : idem à /dev/zero mais avec un retour d'espace plein
+
+
+echo "toto" > /dev/full
+
+
+
+
+LINUX : Pseudos Devices
+
+
+/dev/random : génère des chiffres aléatoire (souvent utilisé en cryptographie)
+
+
+dd if=/dev/random of=test.txt count=1 bs=1024
+head -c 500 /dev/random | tr -dc 'a-zA-Z0-9~!@#$%^&*_-'
+head -c 500 /dev/random | base64
+
+
+
+
+LINUX : Pseudos Devices
+
+
+/dev/loop : mise à disposition de fichiers sous forme de block device (/dev)
+
+
+losetup --list
+
+
+
+LINUX : Device TTY & PTS
+
+
+précédente vidéo : shell vs console vs terminal
+
+
+TeleTYpewriter ou  Téléscripteurs
+
+TTY = console terminal (primitif)
+PTS = pseudo terminal (indirect)
+Note : man !!!
+
+
+LINUX : Device TTY & PTS
+
+
+commandes
+
+
+tty
+who
+w
+
+
+
+changer de terminal
+
+
+ctrl + alt + f[1-6]
+
+
+
+debug : pas de tty/terminal (ssh,docker...)
+
+
+-t 
+
+
+LINUX : Multiplexer de terminaux - SCREEN
+
+
+
+multiplexer de terminaux
+
+
+permet :
+
+  * partager un terminal
+
+  * maintenir des commandes longues (sinon nohup &)
+
+  * organiser le travail
+
+
+
+
+
+
+LINUX : Multiplexer de terminaux - SCREEN
+
+
+lister les screens
+
+
+screen -ls
+
+
+
+
+ouvrir un screen
+
+
+screen
+screen -ls
+
+
+
+
+s'attacher à un screen
+
+
+screen -r <id_screen>
+exit
+
+
+
+
+LINUX : Multiplexer de terminaux - SCREEN
+
+
+donner un nom
+
+
+screen -S <nom_session>
+screen -r <nom_session>
+
+
+
+
+multi-attachement
+
+
+screen -S <nom_session>
+sleep 10000
+screen -x <nom_session> 
+
+
+
+
+LINUX : Multiplexer de terminaux - SCREEN
+
+
+raccourcis
+
+
+    [CTRL]+[a] suivi de [n]: pour «next», aller au terminal suivant.
+    [CTRL]+[a] suivi de [p]: pour «previous», aller au terminal précédent.
+    [CTRL]+[a] suivi de [0]..[9]: aller au terminal n.
+    [CTRL]+[a] suivi de [']: saisir dans le prompt le numéro du terminal.
+    [CTRL]+[a] suivi de ["]: lister des différents terminaux, avec la possibilité d'en choisir un.
+    [CTRL]+[a] suivi de [w]: lister les terminaux actuels avec leur nom.
+    [CTRL]+[a] suivi de [a]: retourner au terminal d'où l'on vient.
+    [CTRL]+[a] suivi de [A]: nommer les terminaux et s'y rendre par la suite plus aisément.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
