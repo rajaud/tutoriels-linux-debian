@@ -63,6 +63,7 @@
 ![linuxtec18](https://github.com/user-attachments/assets/39d21991-30d2-4768-9cb8-9eca719e0d9b)
 
 
+![linuxtec19](https://github.com/user-attachments/assets/6efe2462-b9ac-4c92-875a-7a27b9e9bdb0)
 
 
 
