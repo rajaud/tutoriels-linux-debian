@@ -67,7 +67,35 @@
 
 
 
-## Explanation 
+## Explication via perplexity
+
+Port number :
+
+## DNS (Domain Name System)
+
+DNS primarily uses port 53 for both TCP and UDP protocols2.
+UDP port 53: Used for standard DNS queries and responses
+TCP port 53: Used for larger DNS messages that exceed the UDP size limit (traditionally 512 bytes)
+
+
+## NFS (Network File System)
+
+NFS uses multiple ports, with the main ones being1:
+TCP/UDP port 2049: Used by the NFS daemon (nfsd)
+TCP/UDP port 111: Used by the portmapper service
+Additional ports used by NFS-related services include:
+
+
+## TCP/UDP port 635: Used by mountd (in ONTAP 9)
+
+TCP/UDP port 4045: Used by nlockmgr
+TCP/UDP port 4046: Used by status service
+TCP/UDP port 4049: Used by rquotad
+NTP (Network Time Protocol)
+NTP uses port 123, typically with UDP protocol3.
+UDP port 123: Used for NTP time synchronization
+It's important to note that while these are the standard port numbers, they can sometimes be configured differently in specific environments. Always verify the actual port usage in your particular system setup
+
 
 
 
