@@ -42,5 +42,20 @@ echo "toto" > /dev/tty2
 echo $SHELL
 ```
 
+# Linux : commandes de bases et hiérarchie du filesystem
+
+FHS pour Filesystm hierarchy standard (V3 en 2015). 
+Repose sur le disque et le format
+
+## Fonction couramment utilisées 
+
+>> / pour le répertoire racine
+>> ~ home du user courant = /home/bob pour moi
+>> .. répertoire parent
+>> . répertoire actuel
+
+## Hiérarchie de systeme de fichier 
+
+![468945985_4109731389307332_8570483096162121247_n](https://github.com/user-attachments/assets/90105381-39d1-48ae-a1c2-c5895ac53fa4)
 
 
