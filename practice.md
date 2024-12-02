@@ -26,5 +26,21 @@ On peut écrire sur un terminal si on a les droits
 ```
 echo "toto" > /dev/tty2
 ```
+## Console 
+
+>> accès physique au terminal primaire
+>> pas besoin d'accès réseau, dernier ecours si perte de connexion totale
+
+## Shell 
+
+>> interpréteur de commande pour communiquer avec le kernel
+>> langage pour commmuniquer avec le noyau
+
+>> différents type : sh ; bash ; zsh
+
+```
+echo $SHELL
+```
+
 
 
