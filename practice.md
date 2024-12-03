@@ -79,6 +79,14 @@ Repose sur le disque et le format
 >> puis n pour avancer ou N pour reculer
 >> G pas de page et g haut de page
 
+## Commandes usuelles
+
+>> rmdir pour supprimer les directory
+>> rm -i pour avoir confirmation
+>> cp et mv ; on prend tous les premiers arguments et on les met dans le dernier
+>>
+>> touch ; créé ou met a jour la date du fichier
+>> date 
 
 
 
