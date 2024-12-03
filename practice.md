@@ -169,7 +169,33 @@ conf ici : /etc/sudoers
 ![image](https://github.com/user-attachments/assets/754de823-aaa6-422f-bed5-aa7c942b5f75)
 
 
+# Users et group 
 
+UID et GID identifiant unique pour les groups et les users
+
+UID : 
+>> 0 root
+>> 0 -100 : mode statique pour le systeme
+>> <1000 dynamique mais reserrvé pour le systeme (user créé pour lancé un process et applicatif)
+>> >1000 autres
+>> nobody : valeur max définie (montage de filesystem ou docker)
+
+
+GID : géré un ensemble de user
+>> 0 pour le groupe root
+>> 100 pour le groupe par défaut (users)
+>> groupe utilisateur à partir de 1000
+
+![image](https://github.com/user-attachments/assets/e6ebcd1e-5678-457e-9957-88fdbd5edc2c)
+
+lister les groupes : 
+
+>> cat /etc/group
+>> getent group
+
+créé un group : sudo groupadd ; 
+
+fichier de conf pour groupadd ; /etc/login.defs mais ne jamais y toucher 
 
 
 
