@@ -149,7 +149,56 @@ ICi on va changer le user en 1, puis le user et le group en les séparant avec :
 >> :%s/mat/mathieu/g % va supprimer toutes les occurences
 >> mode visuel : ctr + v utile pour plusieurs bloc
 >> ctr + v on selectionne les blos que l'on veut, pour "maj +i" pour revenir au début et faire ce que l'on veut, exemple rajouté un #, puis échap et ça rajoute dièse sur toutes les lignes
->> 
+ 
+
+## Su sudo 
+
+en fonction du user, on a pas le même environnement 
+
+
+>> su pour switch user
+>> su - pour switcher d'env aussi
+
+![image](https://github.com/user-attachments/assets/c7c005a6-19d7-48ce-b03a-d23617a71e5a)
+
+conf ici : /etc/sudoers
+
+>> pour modif cela, on use VISUDO et on ouvre un second terminal pour éviter de perdre l'accès a la machine si on se trompe
+
+
+![image](https://github.com/user-attachments/assets/754de823-aaa6-422f-bed5-aa7c942b5f75)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
