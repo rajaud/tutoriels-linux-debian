@@ -93,10 +93,40 @@ Repose sur le disque et le format
 
 ![linuxfilespermission](https://github.com/user-attachments/assets/1e6c0fa6-16f1-4b8a-99f5-77da01a8b356)
 
+3 cooamndes : 
+>> LS ou stat ou getfacl pour voir les permissions
+
+![image](https://github.com/user-attachments/assets/e442c133-1b2a-45aa-bf12-19ba2c955020)
+
+>> Pour le filetype en premier il existe :
+>> d : directory
+>> c character device
+>> l symlink
+>> s socket
+>> b block device
+>> d door
+>> p named pipe
+>> - file
+
+## commandes pour modifier les permissions 
+
+
+>> chmod -R recurcive et -c mode verbeux et affiche uniquement les modif qui ont été faites
+>> chmod 777 pour ajouter tous
+>> chmod +r ou +x ou +w pour appliquer a tous les users
+>> chmod o-w >> ici on enlève le mode writer pour le groupe other sinon u et g pour les 2 autres groupes
 
 
 
+>> chown 
 
+![image](https://github.com/user-attachments/assets/6f105d20-990c-4eae-a199-9ceea76521d9)
+
+ICi on va changer le user en 1, puis le user et le group en les séparant avec : 
+
+>> chgroup peu utilisé
+
+ 
 
 
 
