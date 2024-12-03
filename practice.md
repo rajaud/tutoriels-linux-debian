@@ -127,11 +127,29 @@ ICi on va changer le user en 1, puis le user et le group en les séparant avec :
 >> chgroup peu utilisé
 
  
+# VI et VIM 
 
+>> mode visuel ctr + v
 
-
-
-
+>> G pour descendre en bas de page
+>> gg pour le haut de page
+>> / pour recherche et n pour l'occurence d'après m pour avant
+>> : set number pour afficher les lignes
+>> u undo
+>> :undo et : redo pour avant après
+>> supprimer des  lignes dd ou 10dd pour supprimer 10 lignes
+>>
+>>  copier coller
+>> yy
+>> p
+>> ou pour copier coller 3 lignes
+>> 3yy
+>> p
+>> rempalcer drs iterations
+>> :%s/mat/mathieu/g % va supprimer toutes les occurences
+>> mode visuel : ctr + v utile pour plusieurs bloc
+>> ctr + v on selectionne les blos que l'on veut, pour "maj +i" pour revenir au début et faire ce que l'on veut, exemple rajouté un #, puis échap et ça rajoute dièse sur toutes les lignes
+>> 
 
 
 
