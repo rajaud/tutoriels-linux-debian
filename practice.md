@@ -89,6 +89,9 @@ Repose sur le disque et le format
 >> date 
 
 
+## Permissions de fichiers 
+
+![linuxfilespermission](https://github.com/user-attachments/assets/1e6c0fa6-16f1-4b8a-99f5-77da01a8b356)
 
 
 
