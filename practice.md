@@ -197,8 +197,22 @@ créé un group : sudo groupadd ;
 
 fichier de conf pour groupadd ; /etc/login.defs mais ne jamais y toucher 
 
+>> groupdel pour supprimer un group
 
+>> Pour les users : On ne créé pas la home automatiquement ni le password,
+>>
+>> -m pour la home
+>>
+>> on créé le group g2 et on le rajoute au groupe docker
 
+>> si utilisateur system, on peut mettre un /bin/nologin pour le bash par defaut donc aucun bash fourni pour une intéraction
+>>
+>> 
+![image](https://github.com/user-attachments/assets/d35bf13e-7454-40f4-9488-b20303ae74a2)
+
+>> adduser différent, fonctionne de manière interactive donc pas ouf en infra as code
+>>
+>> passwd pour modifier les mot de passe
 
 
 
