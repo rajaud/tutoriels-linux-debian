@@ -289,12 +289,30 @@ On peut créé des scripts dans /etc/profile.d/ qui vont être lu au démarrage
 Ici pour modifier cela
 
 
+# UMASK et SKEL 
+
+D'ou viennent les fichiers qui sont dans ma home etc, 
+
+La dans la conf de l'ajout de user : 
+
+![image](https://github.com/user-attachments/assets/b854d64d-8fd2-4a60-bd52-686a6e6f0085)
+
+On a un paragraphe sur le SKEL à /etc/skel
+
+![image](https://github.com/user-attachments/assets/e7d66c46-f4bb-462f-8f8e-3570054ff12e)
 
 
+>> aspect comportement par défaut : UMASK
 
+>> dans /etc/login.defs
 
+>> ![image](https://github.com/user-attachments/assets/57e367f5-f7b1-4841-805c-0eddae5debba)
 
+![image](https://github.com/user-attachments/assets/aa3b3cde-6e1a-4e2d-8757-8f50c98cfff4)
 
+Ici on affiche pour les fichiers et avec -S pour les dossiers
+
+>> On peut définir avec la commande umask, ce qui va soustraire de 666 et 777 ce que l'on met 
 
 
 
