@@ -256,6 +256,40 @@ Pour ajouter à toute une session
 >> ~/.bash_logout quand on ferme la session
 
 
+# MOTD & ISSUE & LOGOUT 
+
+## avant le login >> ISSUE
+
+
+>> prelogin message : attention sécurité ;
+
+>> /etc/issue fichier de conf en sudo 
+
+
+
+## après login >> MOTD (message of the day)
+>> 
+
+![image](https://github.com/user-attachments/assets/0d2dcacd-4ce0-43b3-8e1e-be539c25ad4e)
+
+On peut créé des scripts dans /etc/profile.d/ qui vont être lu au démarrage
+
+![image](https://github.com/user-attachments/assets/690689ed-6339-4627-a43b-c51bc3ce13f0)
+
+>> PAr exemple ici, on le nom de la machine et l'ip
+
+
+
+## LOGOUT 
+
+```
+~/.bash_logout
+```
+
+Ici pour modifier cela
+
+
+
 
 
 
