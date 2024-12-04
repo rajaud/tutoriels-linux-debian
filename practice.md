@@ -215,9 +215,45 @@ fichier de conf pour groupadd ; /etc/login.defs mais ne jamais y toucher
 >> passwd pour modifier les mot de passe
 
 
+# Enviroonement et variables 
+```
+login
+```
+login qui permet de débuter une session sur le systeme, il se base sur /etc/passwd pour afficher les infos de SHELL, USER ...
+
+conf /etc/login.defs 
+
+>> 2 types : interactif ou non
+>>
+>> shell login vs non login
+>>
+>> après lancement de login, scripts autocompletion etc, source de variables (variables d'env, etc) d'où source bashrc quand on modifie cela
+
+
+```
+env
+```
+variables environnement visible. On peut rajouter une variable avc -i 
 
 
 
+
+```
+export 
+```
+Pour ajouter à toute une session 
+
+>> Cheminement de fichier définnissant l'environnement : pour tous les users
+>> /etc/profile
+>>
+>> personnalisable dans /etc/profile.d/
+>>
+>> Pour chaques users : 
+
+>> ~/.bash_profile
+>> ~/.bashrc pour export ou alias tout le temps puis sourcé le fichier source ~/.bashrc ou . ~/.bashrc c'est pareil
+>>
+>> ~/.bash_logout quand on ferme la session
 
 
 
