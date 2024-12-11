@@ -314,21 +314,88 @@ Ici on affiche pour les fichiers et avec -S pour les dossiers
 
 >> On peut définir avec la commande umask, ce qui va soustraire de 666 et 777 ce que l'on met 
 
+# Date et time 
+
+notion de format et localisation : 
+
+CEST : central européen summer time 
+UTC : universal tome coordinated
+RTC : a disparaitre Rreal time cloack 
+
+Format epoch : commence le 01 01 1970 en seconde (timestamp en monitoring) limité en 32bits en 2038. 
+
+## temps de la machine vs temps du système 
+
+machine : horlohge RTC, bios, pile 
+systeme : prise en compte des fuseaux horaires, etc 
+
+```
+date
+timedatectl
+```
+
+![image](https://github.com/user-attachments/assets/d24b0df5-9d79-44d8-822c-84192d3ebcdf)
+
+>> format :
+
+```
+date +%Y%m%d
+date +%Y.%m.%d/%H%M%s
+```
 
 
+![image](https://github.com/user-attachments/assets/3de3ab40-bace-49a9-b4ab-a329bb5f74ae)
 
 
+>> hwclock pour gérer sur la machine, pour chznger 
+
+```
+sudo hwclock --set --date "2022-01-13 09:00:00" --utc
+
+```
+
+La on a modifier la hardware d'ou hwclock, on peut mettre a jour le hw ou le systeme l'un par rapport à l'autre 
+
+![image](https://github.com/user-attachments/assets/31cb0911-8417-4a10-968e-b57f80d72b8c)
 
 
+## Timezone 
+
+définie à différent endroit
+
+![image](https://github.com/user-attachments/assets/b39b683a-e015-4d20-b344-746f0151603c)
 
 
+## changer de timezone : 2 méthodes
+
+Pour lister 
+```
+sudo timedatectl list-timzone 
+```
+
+![image](https://github.com/user-attachments/assets/d6dae0af-0f5b-450f-a78c-b7c49d2286b4)
+
+## Où par lien symbolique 
+
+On va supprimer le lien symbolique pour en créer un nouveau 
+
+```
+sudo rm -rf /etc/localtime
+sudo ln -s /usr/share/zoneinfo/America/New-York /etc/localtime
+```
+
+# Date et heure 
+
+>> timedatectl encore mais on ne peut pas comme ça car on est en NTP actif
+
+![image](https://github.com/user-attachments/assets/eadd45db-6d60-4233-88ec-ba3ff92b6b40)
+
+Pour voir en détail : 
+
+![image](https://github.com/user-attachments/assets/b5754985-f87d-4eb9-91b0-fd7fb9012eb1)
 
 
-
-
-
-
-
+>> Autre protocole : TTP pls précis
 
 
 
