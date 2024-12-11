@@ -397,6 +397,71 @@ Pour voir en détail :
 
 >> Autre protocole : TTP pls précis
 
+# Les locales 
+
+>> Les spécificités des localisations : format de date et heures, la monnaie, , etc
+
+Pour les trouver : 
+
+![image](https://github.com/user-attachments/assets/918f56fc-824d-431e-b45a-6160a2c1c3e3)
+
+
+![image](https://github.com/user-attachments/assets/2e53bbfb-19a7-4659-88c6-74fb4b767d70)
+
+
+Pour trouver les valeurs : 
+
+![image](https://github.com/user-attachments/assets/4e9e96f4-47a4-4e79-8459-374bf946b654)
+
+![image](https://github.com/user-attachments/assets/f5da766b-873e-4545-ab74-2bfbc592f99e)
+
+```
+man locale
+man localctl
+man update-locale
+```
+Modifier la disposition du clavier par exemple avec keyboard
+
+MAJ du local
+
+>> possible de le faire avec sudo localctl set-locale aussi
+
+
+![image](https://github.com/user-attachments/assets/ea7e38d5-b1e6-4fab-853b-c159e09571f5)
+
+
+>> spécifique pour un user : avc EXPORT dans le ~/.bashrc
+
+>>> Modif clavier
+
+```
+setxkbmap fr ou us
+```
+
+# Les types de fichiers
+
+![image](https://github.com/user-attachments/assets/69734a52-f6b4-46b8-b2d5-0e7f3ac840a8)
+
+
+![linux file](https://github.com/user-attachments/assets/57eb3381-7fd4-4d93-a62e-2b6f0c0d5a20)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
