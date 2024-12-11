@@ -446,23 +446,61 @@ setxkbmap fr ou us
 ![linux file](https://github.com/user-attachments/assets/57eb3381-7fd4-4d93-a62e-2b6f0c0d5a20)
 
 
+![image](https://github.com/user-attachments/assets/c08a1cba-0d3e-4d6e-8170-a542fc65e375)
 
 
+![image](https://github.com/user-attachments/assets/67883655-7164-4e7d-a0d5-30980ff6e633)
 
 
+Pour les répertoires : on voit les liens qui changent par rapport aux fichiers 
+
+![image](https://github.com/user-attachments/assets/83164501-9341-47f6-87c4-66214f2a1034)
 
 
+## Hard link  ln 
+
+>> lien vers l'inode ils ont le même inode. 
+
+![image](https://github.com/user-attachments/assets/f364622e-db6b-4025-a57a-d8fcc3ba44b7)
 
 
+Si on supprime un fichier, le second est toujours là car on supprime juste l'accès à l'inode 'un fichier. 
+
+> Lien sybolique avec ln -s 
+
+![image](https://github.com/user-attachments/assets/f3ea09c0-2133-4cda-8c9b-25e5dab55d93)
+
+Ici, si on supprime le lien donc ici, titi.txt, on ne peut plus y accéder 
+
+![image](https://github.com/user-attachments/assets/0048ce5c-cc7f-408d-8f35-b1e45d17f2bd)
 
 
+## Device char ou block
+
+![image](https://github.com/user-attachments/assets/ce6424d5-60ce-4e5b-964f-6125c92f5a01)
 
 
+![image](https://github.com/user-attachments/assets/b15f6af3-0b42-4744-85bf-d51ad7cf7c41)
+
+# Locale domain socket
+
+socket = connexion entre processus
+
+socket interne ou socket réseau
+
+créé par syscall
+
+man 2 socket >> 2 car syscall
+
+# Named PIPE 
+
+>> différent du pipe, même fonctionnement mais attention
+
+![image](https://github.com/user-attachments/assets/95d9cfb5-a753-4fde-8514-72a3ea802e63)
 
 
+![image](https://github.com/user-attachments/assets/af04af63-9ef4-45b6-bc12-611bd840da26)
 
-
-
-
+Protocole fifo pour first in first out 
 
 
