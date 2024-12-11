@@ -503,4 +503,15 @@ man 2 socket >> 2 car syscall
 
 Protocole fifo pour first in first out 
 
+# Déplacer copier et compresser 
+
+>>> cp mv tar 
+
+cp avec backup cp -b
+
+cp -p pour preserver les permissions si on est root par exemple 
+
+ 
+
+
 
