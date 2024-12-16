@@ -511,7 +511,32 @@ cp avec backup cp -b
 
 cp -p pour preserver les permissions si on est root par exemple 
 
+ # Stat block inodes et fichiers
  
+![image](https://github.com/user-attachments/assets/c1294beb-812b-4b68-9634-89db90e33178)
+
+
+>> notion de block : filesystem découpé en morceaux : block ; chaque block device dispoe d'une taille de block
+
+>> lsblk pour voir les block
+
+
+>> pluseiurs niveaux de block : disk block size : 512 ou data block 4096(4k)
+
+>> inodes : pointeurs vers les data blocks 
+
+>> Process de lecture d'un fichier :
+>> 1 lire l'inode
+>> 2 trouver l'inode dans la table des inodes
+>> 3 lire les infos de l'inode
+>> 4 récuération de la localisation des blocks
+>> 5 lecture des data blocks
+
+Le cache va ici permettre de recherche plus vite un fichier en sautant des étapes ici. 
+
+
+
+
 
 
 
