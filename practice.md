@@ -535,8 +535,46 @@ cp -p pour preserver les permissions si on est root par exemple
 Le cache va ici permettre de recherche plus vite un fichier en sautant des étapes ici. 
 
 
+# Montage d'un disque
+
+>> sur virtualbox créé un disque virtuel et ajouter à la machine 
+
+>> lister les disques
+
+sudo fdisk -l | more 
+
+![image](https://github.com/user-attachments/assets/48b5f757-4ba6-47bd-becc-bb7c8aa8ac26)
 
 
+>> formater le disque 
+
+mkfs.ext4 /dev/sdb
+
+![image](https://github.com/user-attachments/assets/56fa2017-8e6c-44da-85f0-dbacd91e8ff8)
+
+>> Monter le disque sur le filesystem
+Si on ferme la machine, on perd le montage si on ne persiste pas
+
+
+>> mount -t ext4 /dev/sdb /srv/mat/
+
+![image](https://github.com/user-attachments/assets/7bf8a196-1b63-49c9-acc3-9501c404f3da)
+
+On peut le voir avec la commande mount 
+
+![image](https://github.com/user-attachments/assets/76aff31e-0550-4db1-935e-31b07ae81b08)
+
+![image](https://github.com/user-attachments/assets/5c936632-b2ca-41d5-92d1-ad9b97a417eb)
+
+#DF pour diszk free
+
+![image](https://github.com/user-attachments/assets/0c6fcd14-5b3d-4fce-acdd-828352869700)
+
+![image](https://github.com/user-attachments/assets/ee980c51-663c-4fd3-91f7-ff37ccae5fa4)
+
+>> différente option de df
+
+![image](https://github.com/user-attachments/assets/4f84f8e4-6ae5-4154-ad08-e93fa6c171f7)
 
 
 
