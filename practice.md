@@ -576,5 +576,11 @@ On peut le voir avec la commande mount
 
 ![image](https://github.com/user-attachments/assets/4f84f8e4-6ae5-4154-ad08-e93fa6c171f7)
 
+umount pour démonter 
+
+![image](https://github.com/user-attachments/assets/e2141290-e392-4c93-902b-94de253c628e)
+
+
+# commande DD 
 
 
