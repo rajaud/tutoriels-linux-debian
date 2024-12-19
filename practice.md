@@ -604,20 +604,55 @@ et restoration :
 ![image](https://github.com/user-attachments/assets/27ed64c1-23f9-4042-96f5-8df9354e894a)
 
 
+# Mount et fstab : option bind fail sur reboot
+
+>> cat /etc/fstab permet de rendre permanent les montage de mount 
 
 
+![image](https://github.com/user-attachments/assets/3a2ea60d-b59c-48cf-9ea4-4e0446a2225d)
+
+pour lister les uuid : sudo blkid ou sudo lsblk -fe7
 
 
+![image](https://github.com/user-attachments/assets/b8add8ef-0a8f-46ad-9775-2233b2d67ef5)
 
+![image](https://github.com/user-attachments/assets/90485d68-a6bb-44c7-ab64-257059a49775)
 
+no fail !! TRES IMPORTANT évite le plantage du du PC au boot si le disque n'est pas OK
 
+Exemple ici : si on monte un sdb dans /etc/fstab et qu'on supprime le disque dans virtual box ; 
 
+![image](https://github.com/user-attachments/assets/c852ce19-2529-4181-aaee-da856fcab4a1)
 
+on fait quoi ? idem que root mot de passe 
 
+édite le grub : 
 
+on ça : 
 
+![image](https://github.com/user-attachments/assets/d562c5c1-1b1f-4b5e-896b-a20f500a5d3f)
 
+On va modifié cela en rajoutant init=/bin/bash pour avoir un bask de dispo : puis ctrl + X pour fermer
 
+Attention qwerty 
+
+![image](https://github.com/user-attachments/assets/957d76d5-03d2-4083-91f6-e0f26ae6d7e8)
+
+![image](https://github.com/user-attachments/assets/133f4f49-21dc-4fcb-bac5-5782a3c5b1a3)
+
+![image](https://github.com/user-attachments/assets/dd27f75f-8f5e-4b3b-8dfb-6979d39e9437)
+
+puis on relance l'init avec : 
+
+![image](https://github.com/user-attachments/assets/1a96ebd0-76b0-4aef-9dcc-8dab6e772817)
+
+montage de type bind monter un répertoire dans u nautre : 
+
+![image](https://github.com/user-attachments/assets/3441d0cf-cd80-44b9-82ba-53045fc0465c)
+
+>> findmnt permet de voir les montages avec arborescence
+
+![image](https://github.com/user-attachments/assets/e45c86c2-bad1-4384-b8dc-34822d2b72b0)
 
 
 
