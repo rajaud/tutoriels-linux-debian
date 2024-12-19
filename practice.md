@@ -583,4 +583,43 @@ umount pour démonter
 
 # commande DD 
 
+copie un disque de block a block 
+
+>> exemple avec la commande status pour voir en cours : 
+
+![image](https://github.com/user-attachments/assets/f1769968-385d-4399-b8fe-13608a487d7a)
+
+on peut copié au formay image aussi : 
+
+![image](https://github.com/user-attachments/assets/80f6a8aa-ab79-4be7-a358-aabab615880f)
+
+![image](https://github.com/user-attachments/assets/05059aff-2215-4c91-bdd4-170d70cec59b)
+
+cleané un disque : on peut le faire de block à block aussi
+
+![image](https://github.com/user-attachments/assets/257e3299-78e8-43b0-b0b4-422dea1c231e)
+
+et restoration : 
+
+![image](https://github.com/user-attachments/assets/27ed64c1-23f9-4042-96f5-8df9354e894a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
