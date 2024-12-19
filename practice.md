@@ -673,7 +673,94 @@ Enfin un resize :
 
 ![image](https://github.com/user-attachments/assets/65b52901-4102-4d0c-b253-4c0aca45a928)
 
+ #♥ Types de filesystem ext4, xfs, btrfs, zfs, ntfs... 
+
  
+![image](https://github.com/user-attachments/assets/fa5dcb13-49c6-4252-8fa1-2813f7d4dc2c)
+
+## EXT4 
+
+![image](https://github.com/user-attachments/assets/2ee221ba-688d-4a0e-82d5-6c6ac6311a7e)
+
+ ![image](https://github.com/user-attachments/assets/5a05ed34-d8fa-4ee9-b196-80670def5fa8)
+
+![image](https://github.com/user-attachments/assets/66231357-a182-4228-bf52-5bc2fbb75cee)
+
+
+## XFS 
+
+![image](https://github.com/user-attachments/assets/8911feec-b2e6-4c8f-9c46-8464639c8155)
+
+![image](https://github.com/user-attachments/assets/f92fff8c-615e-4886-92e2-0e51a4e16b62)
+
+## BTRFS 
+
+![image](https://github.com/user-attachments/assets/e5d8ab9f-ed3a-4d13-b9b2-613155a461ab)
+
+![image](https://github.com/user-attachments/assets/c462f79a-cfb4-4cec-82a6-0cd93a0903d3)
+
+## ZFS 
+
+![image](https://github.com/user-attachments/assets/2ebd4bf3-e569-468f-8e50-2be96ea15cfb)
+
+
+# LVM logical volume manager
+
+principe en schéma 
+
+![image](https://github.com/user-attachments/assets/b0eb0ade-b8f9-403d-9aed-d483e9463cd4)
+
+Puis : 
+
+![image](https://github.com/user-attachments/assets/cd96ae39-7635-4c33-a335-f39ac824d01d)
+
+## Physical volume 
+
+![image](https://github.com/user-attachments/assets/3a32fd37-9830-4915-b0ff-837c3c1cc992)
+
+
+
+![image](https://github.com/user-attachments/assets/8fbb736d-261d-4e60-acf3-d8d303139f55)
+
+## Volume groupe 
+![image](https://github.com/user-attachments/assets/6d3f732e-331f-4fe6-b348-002a900c9dbc)
+
+##☻ logical volume 
+
+![image](https://github.com/user-attachments/assets/11f994b9-a596-469f-ac7c-80c59823f81c)
+
+
+# LVM exemple 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
