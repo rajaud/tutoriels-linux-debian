@@ -654,7 +654,26 @@ montage de type bind monter un répertoire dans u nautre :
 
 ![image](https://github.com/user-attachments/assets/e45c86c2-bad1-4384-b8dc-34822d2b72b0)
 
+# première partition et redimensionnement 
 
+>> étendre partition / ou modifier
+
+![image](https://github.com/user-attachments/assets/cd875cd7-07ad-430d-afdd-f0071056a452)
+
+On fait les modif que l'on veut puis pour que le noyau linux le prenne en compte, 
+
+>> partx /dev/sda4 puis pour vérifier
+
+
+>> cat /proc/partitions
+
+![image](https://github.com/user-attachments/assets/ef3725ef-d187-475f-b30f-e58680afe25d)
+
+Enfin un resize : 
+
+![image](https://github.com/user-attachments/assets/65b52901-4102-4d0c-b253-4c0aca45a928)
+
+ 
 
 
 
