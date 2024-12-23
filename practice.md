@@ -732,7 +732,7 @@ Puis :
 
 # LVM exemple 
 
-
+exercice : rajouter 2 disque externe de 1 Go et mettre en place 2 disque virtuelles de 1.5Go et 200Mo. 
 
 
 
