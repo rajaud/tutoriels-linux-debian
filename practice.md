@@ -811,6 +811,7 @@ ou sudo vgs
 
 # remplacer un disque 
 
+![image](https://github.com/user-attachments/assets/812c6094-86c3-4ab1-9884-2b815d07d16c)
 
 
 
