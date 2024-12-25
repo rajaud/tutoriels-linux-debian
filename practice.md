@@ -799,11 +799,17 @@ ou sudo vgs
 ![image](https://github.com/user-attachments/assets/edcddcc2-797f-4534-9554-73c650db3546)
 
 
+# snapshot et restauration 
 
+![image](https://github.com/user-attachments/assets/7c368e76-0ed4-4996-a614-4a9af3e1e138)
 
+# LV strippé 
 
+>> pas d'intérêt ici car on est sur du virtuel
 
+![image](https://github.com/user-attachments/assets/9c4bfc13-6aec-42da-95ae-23dc363dc2c1)
 
+# remplacer un disque 
 
 
 
