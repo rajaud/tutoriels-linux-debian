@@ -763,17 +763,40 @@ ou sudo vgs
 
 ![image](https://github.com/user-attachments/assets/a640f64b-4724-4e72-a915-d0fa92a8816f)
 
+7 ) on modifie le /etc/fstab avec sudo vim /etc/fstab
+
+![image](https://github.com/user-attachments/assets/2e512060-b3e7-4319-939d-a896d5ff1290)
 
 
 
+8 ) on vérifie 
+
+![image](https://github.com/user-attachments/assets/979a5f85-fbf2-462f-9154-9718db3f2339)
 
 
+# Etendre un volume logiquz et ajouter un disque 
 
+1 on vérifie la dispo free dans les VG 
 
+![image](https://github.com/user-attachments/assets/0daec942-ba32-4724-8523-38254ce1d62f)
 
+2 ) on étend le VG puis on resize 
 
+![image](https://github.com/user-attachments/assets/4e8a3675-c5c4-499a-9974-313b7f5ccc16)
 
+# diminuer un volume logique 
 
+1 ) check les LV et VG 
+
+2 ) demonte le disque 
+
+ 3 ) vérifie le disque 
+
+![image](https://github.com/user-attachments/assets/fafa21d2-c692-4647-b03a-7c78e9be4524)
+
+4 ) on on resize le VG puis on reduce le LV, on resize et on remonte le tout 
+
+![image](https://github.com/user-attachments/assets/edcddcc2-797f-4534-9554-73c650db3546)
 
 
 
