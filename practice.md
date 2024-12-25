@@ -734,12 +734,34 @@ Puis :
 
 exercice : rajouter 2 disque externe de 1 Go et mettre en place 2 disque virtuelles de 1.5Go et 200Mo. 
 
+1 ) le faire sur virtual box 
+
+2 ) sudo fdisk /dev/sdd par exemple et suivre les instructions + partitions en 8e pour lvm linux 
+
+![image](https://github.com/user-attachments/assets/4594fdc5-bdcc-41f9-b663-f0a08e9ffa04)
 
 
+![image](https://github.com/user-attachments/assets/837cc25e-fec5-4518-bd7e-acb921929957)
 
 
+3 ) création des PV : 
+
+![image](https://github.com/user-attachments/assets/9baca252-a11e-470b-9052-83d956751084)
 
 
+4 ) création des volumes groupes 
+
+![image](https://github.com/user-attachments/assets/7a572762-6b87-4fb3-96e5-9182cdf8bb88)
+
+ou sudo vgs 
+
+5 ) création des volumes logiques 
+
+![image](https://github.com/user-attachments/assets/76244020-6489-4033-909e-e35821b1a35b)
+
+6 ) on formate en ext4 
+
+![image](https://github.com/user-attachments/assets/a640f64b-4724-4e72-a915-d0fa92a8816f)
 
 
 
