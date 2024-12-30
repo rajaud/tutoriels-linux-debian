@@ -814,5 +814,19 @@ ou sudo vgs
 ![image](https://github.com/user-attachments/assets/812c6094-86c3-4ab1-9884-2b815d07d16c)
 
 
+# Mirroring les physical volume 
 
+avec 3 disques de même caractéristique sous virtual box, je ne le fais pas mais je suis la vidéo 
+>> on fait un
+```
+fdsik /dev/sdc d e
+partx sdc1 d1 e1
+pv create /dev/sdc1 d1 e1
+vgcreate vg_data /dev/sdc1 d1 
+lvcreate -L 200M -n lv_mat -m 1 /dev/vg_data
+
+
+```
+
+![image](https://github.com/user-attachments/assets/9288e2ae-c589-4569-ba21-7d6aae017bf4)
 
