@@ -830,3 +830,42 @@ lvcreate -L 200M -n lv_mat -m 1 /dev/vg_data
 
 ![image](https://github.com/user-attachments/assets/9288e2ae-c589-4569-ba21-7d6aae017bf4)
 
+
+# les RAID intro 
+
+![image](https://github.com/user-attachments/assets/91dbe132-e737-4948-951f-f27ccfc5302b)
+
+RAID phsique ou logiciel ou semi matériel
+
+## RAID 0 ou strippé 
+
+![image](https://github.com/user-attachments/assets/5d8c4f9b-1330-4981-8e3d-e274ed7fce21)
+
+## RAID 1 
+
+![image](https://github.com/user-attachments/assets/5a1de1f6-fb48-4d0a-8503-99bb339f45a3)
+
+#" RAID 10 pour 1 et 0 
+
+mini 4 disques 
+
+![image](https://github.com/user-attachments/assets/b3b96206-2d74-4a82-ac13-4dbeb4732d97)
+
+## RAID 5 
+
+Mini 3 disques 
+
+![image](https://github.com/user-attachments/assets/5477cbce-2a32-4b8f-aaa2-1b553af5411f)
+
+## RAID 6 avec 2 disques de parité mais plus chère bien sur 
+
+#####################
+
+# RAID 1 
+
+installer mdadm
+
+
+
+
+
