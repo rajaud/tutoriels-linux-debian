@@ -898,5 +898,8 @@ DANGER ici : si on reste comme ça et rebbot; l'UID et le nom md0 peuvent change
 
 ![image](https://github.com/user-attachments/assets/18133ff3-357a-4bf7-a6b0-f778f2f6f9a3)
 
+# récupération de raid : 
+
+![image](https://github.com/user-attachments/assets/30708bc3-f724-474f-92ce-442b305df20a)
 
 
