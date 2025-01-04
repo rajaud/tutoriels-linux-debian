@@ -865,7 +865,38 @@ Mini 3 disques
 
 installer mdadm
 
+création des partitions avec fdisk /dev/sdc et sdd et fd pour raid puis : 
 
+![image](https://github.com/user-attachments/assets/354f8707-5de6-4562-b8b7-8ff7cf169562)
+
+
+Option de vitesse de raid : 
+visualisé : 
+
+![image](https://github.com/user-attachments/assets/683cffd1-1587-4e83-b626-8d24c36fc5b4)
+
+et modifié ce fichier sysctl.conf pour modifier de manière permanente 
+
+DANGER ici : si on reste comme ça et rebbot; l'UID et le nom md0 peuvent changer et donc KO, pour éviter cela, on va fixer cela 
+
+![image](https://github.com/user-attachments/assets/f9bd5eaa-495b-4f33-ae94-0b924b94fcee)
+
+
+![image](https://github.com/user-attachments/assets/7486f065-63f7-4024-9558-51770f8de26c)
+
+# ajouter ou supprimer des disques 
+
+1 le passer en faulty : 
+
+![image](https://github.com/user-attachments/assets/d933f917-b426-4aeb-ad32-0eaf9e18b00a)
+
+2 le supprimer : 
+
+![image](https://github.com/user-attachments/assets/63c6b880-929d-41de-bba1-0b7de6dfbf8b)
+
+# add : 
+
+![image](https://github.com/user-attachments/assets/18133ff3-357a-4bf7-a6b0-f778f2f6f9a3)
 
 
 
