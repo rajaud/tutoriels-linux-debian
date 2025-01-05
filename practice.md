@@ -902,4 +902,10 @@ DANGER ici : si on reste comme ça et rebbot; l'UID et le nom md0 peuvent change
 
 ![image](https://github.com/user-attachments/assets/30708bc3-f724-474f-92ce-442b305df20a)
 
+# Fsck pour tchecker les disques 
+
+# Résumé des disques 
+
+![image](https://github.com/user-attachments/assets/7aa39457-f0c5-4cfd-95e2-514be6ba0634)
+
 
