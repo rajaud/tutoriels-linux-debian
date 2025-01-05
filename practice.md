@@ -909,3 +909,8 @@ DANGER ici : si on reste comme ça et rebbot; l'UID et le nom md0 peuvent change
 ![image](https://github.com/user-attachments/assets/7aa39457-f0c5-4cfd-95e2-514be6ba0634)
 
 
+# LES I/O 
+
+![image](https://github.com/user-attachments/assets/43c2ce60-4b89-44e1-8697-d3f835a31a32)
+
+
