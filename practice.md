@@ -913,4 +913,61 @@ DANGER ici : si on reste comme ça et rebbot; l'UID et le nom md0 peuvent change
 
 ![image](https://github.com/user-attachments/assets/43c2ce60-4b89-44e1-8697-d3f835a31a32)
 
+# Pyramide du stockage 
+
+![image](https://github.com/user-attachments/assets/e6a8369f-923c-4560-b7d9-7061d396c57d)
+
+
+
+![image](https://github.com/user-attachments/assets/6263e420-2347-400f-a5f5-223bf03fa4c2)
+
+
+
+![image](https://github.com/user-attachments/assets/6475f1b8-0733-4097-bb42-f11e26f0814c)
+
+
+![image](https://github.com/user-attachments/assets/573cffd2-d1d7-47fd-a452-a8ffdb685288)
+
+
+![image](https://github.com/user-attachments/assets/32b54a82-f8de-4a7b-88b5-b3af082bdebe)
+
+
+# iostat pour visualiser les stats d'écritures et de lectures
+
+!!! lu depuis le boot de la machine 
+
+![image](https://github.com/user-attachments/assets/244f949b-f40a-49df-8a4b-1f5b746f61d8)
+
+Pour installer : 
+
+![image](https://github.com/user-attachments/assets/7dbb7177-95e8-466a-8921-e033a6e66bf6)
+
+```
+iostat 5 # rafraichisssement toutes les 5sec
+iostat -c # pour cpu 
+
+```
+
+![image](https://github.com/user-attachments/assets/c52d965a-1478-421e-a938-2cc42240dd37)
+
+
+![image](https://github.com/user-attachments/assets/9df75e00-d65e-4318-beaf-b132bad6c020)
+
+## Delta possible avec intervalle  : 
+
+```
+iostat 3 5 
+```
+![image](https://github.com/user-attachments/assets/9ba528ec-a46c-4779-9514-3dfaeb6a69e1)
+
+![image](https://github.com/user-attachments/assets/59e66857-84f2-437a-83cb-ba4e3a618d46)
+
+
+
+
+
+
+
+
+
 
