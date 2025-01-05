@@ -963,11 +963,25 @@ iostat 3 5
 ![image](https://github.com/user-attachments/assets/59e66857-84f2-437a-83cb-ba4e3a618d46)
 
 
+# Udev manager les devices 
+
+![image](https://github.com/user-attachments/assets/690b5de8-e127-4cde-a2c0-231e1f1b990c)
+
+
+![image](https://github.com/user-attachments/assets/6d420286-eb32-4d16-b9f6-03b0092256b6)
+
+![image](https://github.com/user-attachments/assets/5743207e-5740-4dee-abdc-040241ca0c9c)
+
+## exemple pour la souris
+
+![image](https://github.com/user-attachments/assets/5544e247-07d1-4821-81b4-7407cfd7dc5f)
 
 
 
+![image](https://github.com/user-attachments/assets/0b55baeb-076c-4884-b312-8399489774cd)
 
 
+![image](https://github.com/user-attachments/assets/0ba85ffd-7f18-4b5a-8163-794a9271171c)
 
 
 
