@@ -1002,3 +1002,33 @@ avec un petit d pour passer le device
 
 
 
+# DEvice mapper 
+
+Framework pour wrapper les devices et faire l'interface entre le kernel et les devices 
+
+
+![image](https://github.com/user-attachments/assets/98f00d02-e4ab-4936-b213-5ae1caa14172)
+
+![image](https://github.com/user-attachments/assets/2cd17e10-acb6-4648-a6bc-c1afe94d2b56)
+
+# les pseudo devices 
+
+![image](https://github.com/user-attachments/assets/d21cc645-d90e-4810-bbac-fe859bdd4f18)
+
+![image](https://github.com/user-attachments/assets/483ad26f-e882-4dce-bef7-cc0fd892c229)
+
+/dev/null
+![image](https://github.com/user-attachments/assets/e450cabb-a31c-4d7c-81ff-eecc69c76e81)
+
+/dev/zero 
+
+![image](https://github.com/user-attachments/assets/065db816-e968-43ee-b5ee-bf658fcd0aa8)
+
+/dev/random 
+
+utilisé en cryptographie 
+![image](https://github.com/user-attachments/assets/22123b27-5205-4bd9-b629-fe3c8cd947c1)
+
+/dev/loop pour les devices et snap pour les applications.
+
+
