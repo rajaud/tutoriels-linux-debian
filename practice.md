@@ -984,4 +984,21 @@ iostat 3 5
 ![image](https://github.com/user-attachments/assets/0ba85ffd-7f18-4b5a-8163-794a9271171c)
 
 
+# SCSI 
+
+![image](https://github.com/user-attachments/assets/47956365-c380-4b10-b986-d0303267d415)
+
+![image](https://github.com/user-attachments/assets/4b378b5f-625a-4e3b-b2c4-bdc87c04f736)
+
+
+![image](https://github.com/user-attachments/assets/537e4941-c4dc-48d6-b34f-a6fa7bf8497e)
+
+
+![image](https://github.com/user-attachments/assets/a6ad1844-5a73-47ed-8cbf-ed51010ffbf9)
+
+avec un petit d pour passer le device 
+
+![image](https://github.com/user-attachments/assets/905b9613-dfee-4544-9598-144fbee1e029)
+
+
 
