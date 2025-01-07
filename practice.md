@@ -1031,4 +1031,16 @@ utilisé en cryptographie
 
 /dev/loop pour les devices et snap pour les applications.
 
+# TTY et PTS 
+
+TTY sur la machine, PTS si on utilise mobaXterm par exemple 
+
+![image](https://github.com/user-attachments/assets/b8d58c52-9107-4ce1-b832-ac774804243f)
+
+# screen multiplexeur
+
+générer un job en back ground 
+
+![image](https://github.com/user-attachments/assets/40aeacf7-f163-41a3-81c3-d9dfdf5c1446)
+
 
