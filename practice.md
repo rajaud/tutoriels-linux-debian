@@ -1091,5 +1091,46 @@ du -xksh
 ![image](https://github.com/user-attachments/assets/785a840c-bcd5-46d5-a28a-51d45902854b)
 
 
+# cooamndes pour gérer les devices 
+
+![image](https://github.com/user-attachments/assets/69820b17-f71a-4f69-afbc-1d8a771dc15a)
+
+lsblk -r pour format raw pour le scripting 
+
+
+![image](https://github.com/user-attachments/assets/e6ad3f93-0173-4b30-9170-72504c7c4c3b)
+
+
+![image](https://github.com/user-attachments/assets/807ffe9c-f116-4285-b994-35f8bc1b99e5)
+
+# smart 
+
+![image](https://github.com/user-attachments/assets/5974608d-d433-4ea9-aca1-2cfa64bd52e0)
+
+![image](https://github.com/user-attachments/assets/89d57cbd-d327-4f2d-807a-1ad19bbc147a)
+
+# Ioping 
+
+![image](https://github.com/user-attachments/assets/f6a4a958-5fe7-4da4-88ee-9c1319ee2c15)
+
+####### GERP 
+
+
+![image](https://github.com/user-attachments/assets/42bb30af-f388-4f21-86e5-1677feea44b7)
+
+
+![image](https://github.com/user-attachments/assets/160a0f9a-125a-40b8-8c1c-04e9b9b546cb)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
