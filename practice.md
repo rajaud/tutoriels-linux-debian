@@ -1076,9 +1076,19 @@ générer un job en back ground
 
 avec -a on vient rajouter en + 
 
+# DU et DF 
+
+du -xksh
 
 
+![image](https://github.com/user-attachments/assets/98d83064-fcdf-4077-aad4-bf8c04128835)
 
+
+# df 
+
+![image](https://github.com/user-attachments/assets/00aff684-5ee1-4e8d-b519-8687ccb1d41b)
+
+![image](https://github.com/user-attachments/assets/785a840c-bcd5-46d5-a28a-51d45902854b)
 
 
 
