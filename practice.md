@@ -1041,6 +1041,45 @@ TTY sur la machine, PTS si on utilise mobaXterm par exemple
 
 générer un job en back ground 
 
+
+# Sortie 
+
+# redirection 
+
+## stdout 
+![image](https://github.com/user-attachments/assets/b3b0fb05-cc2a-404e-8778-c9e60e248a94)
+
+
 ![image](https://github.com/user-attachments/assets/40aeacf7-f163-41a3-81c3-d9dfdf5c1446)
+
+![image](https://github.com/user-attachments/assets/5e5514a3-9d6e-4795-8df1-3857fb5f1ec1)
+
+![image](https://github.com/user-attachments/assets/a22dc9fc-bda5-4083-bd2a-3da29722c290)
+
+![image](https://github.com/user-attachments/assets/d92952ab-eeb9-44e9-a010-06041ea1a184)
+
+## stdin 
+
+![image](https://github.com/user-attachments/assets/8e3116a3-166c-4919-b266-d05aa33120d6)
+
+## && combiner 2 commandes sans erreurs, si la première est ok, la seconde se fait, sinon non
+
+![image](https://github.com/user-attachments/assets/ab9d887b-fc62-42ab-97d3-16f6ecc3f446)
+
+# | le pipe
+
+![image](https://github.com/user-attachments/assets/47a47479-d78d-420e-bf9c-8c32a3291390)
+
+## pipe et tee  (permet d'afficher la sortie avec cela 
+
+![image](https://github.com/user-attachments/assets/31017733-7fe1-47ec-ad8b-c4d774619f02)
+
+avec -a on vient rajouter en + 
+
+
+
+
+
+
 
 
