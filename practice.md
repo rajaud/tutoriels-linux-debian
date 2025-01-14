@@ -1122,10 +1122,82 @@ lsblk -r pour format raw pour le scripting
 ![image](https://github.com/user-attachments/assets/160a0f9a-125a-40b8-8c1c-04e9b9b546cb)
 
 
+# Find 
+
+
+![image](https://github.com/user-attachments/assets/3308aa7b-6b2f-4885-adf8-ba0391bf7273)
+
+
+![image](https://github.com/user-attachments/assets/56ffd368-876a-4098-b500-011fdf1d908f)
+
+![image](https://github.com/user-attachments/assets/55dfe810-ca30-4b87-8faf-8557a1298504)
+
+
+![image](https://github.com/user-attachments/assets/ecb999f1-cebc-4a67-98b4-18e2faf5199b)
+
+
+![image](https://github.com/user-attachments/assets/e8544342-474b-412d-89d7-cbe2757fd426)
+
+![image](https://github.com/user-attachments/assets/6d03af12-a75d-4d9c-8dc7-e776aadd9c3a)
+
+
+![image](https://github.com/user-attachments/assets/9e8aa6d6-c75e-4178-a589-c946575c8598)
+
+![image](https://github.com/user-attachments/assets/dff5ec15-a9c8-40d7-b13a-0716b5abc1db)
+
+
+![image](https://github.com/user-attachments/assets/7d8ed699-53a2-4827-a746-9e371b8d88ac)
+
+# Process 
+
+![image](https://github.com/user-attachments/assets/b175ac90-6ed8-4ed5-a119-5bbd10e4f9f3)
+
+cooamnde : 
+
+ps 
+ps aux 
+echo 
+ps auxwww
+
+![image](https://github.com/user-attachments/assets/b685002a-e1ef-46aa-bb5e-ec73bcf0ebf7)
+
+![image](https://github.com/user-attachments/assets/0c0ba81d-ca2d-48cf-a094-cecf0110d414)
+
+![image](https://github.com/user-attachments/assets/7559bcc5-0a67-432f-b3d8-6b8ec8bb6d51)
+
+
+![image](https://github.com/user-attachments/assets/f3f600f3-91c3-4c5f-a048-7989ebb1c8d7)
+
+
+init s'occupe du reaping, process orphelins, zombies 
+
+
+# fork 
+
+process enfant child : 
+
+programme =! process 
+
+![image](https://github.com/user-attachments/assets/590fec84-1d8d-4ca5-916d-3ec70a63d31b)
+
+
+![image](https://github.com/user-attachments/assets/51ba1d03-e50e-437e-a9ec-b3c9c6310641)
 
 
 
+![image](https://github.com/user-attachments/assets/35f650b5-2235-4076-ae73-3e10731b0305)
 
+
+![image](https://github.com/user-attachments/assets/64d4f44b-b95f-41ea-a1dc-75d7baad5ff1)
+
+
+![image](https://github.com/user-attachments/assets/179b2a3a-7b42-45f7-bf0a-23a9c1ca5539)
+
+
+![image](https://github.com/user-attachments/assets/7b983fde-c74d-4ae4-9631-88f6e5d7d5b3)
+
+
+![image](https://github.com/user-attachments/assets/24912faf-fa05-4e71-a9bd-044a6c48c58f)
 
 
 
