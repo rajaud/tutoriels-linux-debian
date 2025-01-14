@@ -1200,9 +1200,35 @@ programme =! process
 ![image](https://github.com/user-attachments/assets/24912faf-fa05-4e71-a9bd-044a6c48c58f)
 
 
+# Status des process 
+
+![image](https://github.com/user-attachments/assets/3b41f83b-c3f3-4b81-a259-1036fb6c88fb)
 
 
+![image](https://github.com/user-attachments/assets/66e793d7-bd3d-4159-98e9-03196de79bfe)
 
+
+![image](https://github.com/user-attachments/assets/b11dd67e-e9b7-4aa3-a13b-015a2faa0cda)
+
+![image](https://github.com/user-attachments/assets/f1738f23-2fd4-4799-929d-67026a98e9b0)
+
+
+![image](https://github.com/user-attachments/assets/fd0c1897-cc01-48a0-a2b0-82e6aa33a13b)
+
+Sous Linux, les processus, les forks et les threads sont des concepts liés à l'exécution parallèle des tâches, mais ils présentent des différences importantes dans leur fonctionnement et leur utilisation14.
+Processus
+Un processus est une instance d'un programme en cours d'exécution. Il possède son propre espace mémoire, ses propres ressources système et son propre contexte d'exécution1.
+Fork
+Le fork est une opération qui crée une copie exacte d'un processus existant. Le processus original devient le parent, et la copie devient le processus enfant6. Sous Linux, le fork utilise la technique de Copy-On-Write (COW) pour optimiser l'utilisation de la mémoire4.
+Thread
+Un thread, ou processus léger, est une unité d'exécution au sein d'un processus. Les threads d'un même processus partagent le même espace mémoire et les mêmes ressources25.
+Voici un tableau résumant les principales caractéristiques, avantages, inconvénients et cas d'utilisation de chacun :
+
+
+![image](https://github.com/user-attachments/assets/3de16a68-287e-4eb8-80c7-7b5177c5d845)
+
+
+Les processus sont utilisés pour des applications indépendantes nécessitant une forte isolation. Les forks sont utiles pour exécuter de nouveaux programmes tout en héritant du contexte du parent. Les threads sont idéaux pour paralléliser des tâches au sein d'une même application, offrant une meilleure performance et un partage facile des ressources
 
 
 
