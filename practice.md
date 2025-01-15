@@ -1274,12 +1274,31 @@ ps -eLf
 ![image](https://github.com/user-attachments/assets/6ce3f9dd-fa27-4e38-b714-60321894a8d6)
 
 
+![image](https://github.com/user-attachments/assets/18296980-ad37-4e6a-98a5-00d86af21329)
 
 
+![image](https://github.com/user-attachments/assets/bd7ec687-41ed-4797-9f84-225dfa379549)
+
+# proc pseudo filesystem 
+
+![image](https://github.com/user-attachments/assets/a3c54f16-9c00-4b38-bd1c-0e10ea10b8be)
 
 
+# Crontab 
 
 
+![image](https://github.com/user-attachments/assets/d2d8b7ff-c65e-42e6-8344-7e9af6174fbb)
+
+![image](https://github.com/user-attachments/assets/13fbb34c-fe23-4edd-8e96-cdb208f77a50)
+
+![image](https://github.com/user-attachments/assets/cedea806-b302-4cd7-aa24-97aa07289ded)
+
+
+# SystemD 
+
+![image](https://github.com/user-attachments/assets/c2bf387b-de0f-4421-8f7f-ee8847b24b9f)
+
+![image](https://github.com/user-attachments/assets/03da5af7-d259-4c9c-9781-fa56d91dbeb7)
 
 
 
