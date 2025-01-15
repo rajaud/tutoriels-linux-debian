@@ -1232,3 +1232,55 @@ Les processus sont utilisés pour des applications indépendantes nécessitant u
 
 
 
+# nice # pas utile 
+
+# commande PS ou TOP 
+
+![image](https://github.com/user-attachments/assets/203b4e90-a849-4ca9-abae-a7b0b09f7250)
+
+
+![image](https://github.com/user-attachments/assets/54d4e54c-905d-4dc5-9070-b214b710d193)
+
+```
+ps aux 
+ps faux 
+ps -eLf
+```
+
+![image](https://github.com/user-attachments/assets/5f031e46-28c9-4982-b092-9e465fbb9584)
+
+
+# Les signaux et le commande kill 
+
+![image](https://github.com/user-attachments/assets/c059141b-7c2c-4d99-8ed0-62e70c065fff)
+
+![image](https://github.com/user-attachments/assets/aad927d5-d707-433a-a487-746af708742a)
+
+
+![image](https://github.com/user-attachments/assets/9138575f-e7c0-44fa-867c-8021492dd352)
+
+
+## SIG HUP 1
+
+![image](https://github.com/user-attachments/assets/ce65619d-48d6-4dfb-b3f2-4f008dec3608)
+
+## sig term 15
+
+## sig kill 9
+
+# Jobs 
+
+
+![image](https://github.com/user-attachments/assets/6ce3f9dd-fa27-4e38-b714-60321894a8d6)
+
+
+
+
+
+
+
+
+
+
+
+
