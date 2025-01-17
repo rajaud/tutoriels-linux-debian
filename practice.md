@@ -1301,5 +1301,75 @@ ps -eLf
 ![image](https://github.com/user-attachments/assets/03da5af7-d259-4c9c-9781-fa56d91dbeb7)
 
 
+![image](https://github.com/user-attachments/assets/71801234-9f89-478f-b2b4-e2846f1cc9ce)
+
+
+![image](https://github.com/user-attachments/assets/c885e28b-5bb0-415e-9df1-812fb15e8a3d)
+
+
+![image](https://github.com/user-attachments/assets/a3db3bb0-a680-428f-a4d6-cbdbdc2f56fb)
+
+
+# hostname et hostnamectl 
+
+![image](https://github.com/user-attachments/assets/33b3ac20-d22e-475b-932d-e64fa91d1a34)
+
+>> cat /etc/hosts
+
+![image](https://github.com/user-attachments/assets/7814beb5-bc89-477a-a6a5-619503bfab6f)
+
+avant : 
+
+![image](https://github.com/user-attachments/assets/6fa5afea-5be8-4c3a-8efe-5d3c0968154b)
+
+
+si on change là, il faut changer /etc/hosts aussi
+
+
+
+![image](https://github.com/user-attachments/assets/0149c8b2-70c3-4a5e-a854-259789c0892f)
+
+![image](https://github.com/user-attachments/assets/6bb35838-e2c4-4092-a071-32e2957169c2)
+
+
+# premier service
+
+![image](https://github.com/user-attachments/assets/eadd53b4-3009-42b8-932d-2939acd9a181)
+
+
+>> Format INI
+
+3 choses : unit, service et install 
+
+![image](https://github.com/user-attachments/assets/8de5e192-b46a-436d-a94d-df58438c1c2d)
+
+
+![image](https://github.com/user-attachments/assets/a4e58727-9368-46df-bfdf-565280d88589)
+
+ExecStart avec un S majuscule^^
+
+![image](https://github.com/user-attachments/assets/3bf15301-fc91-4d84-a87c-86e46dae7020)
+
+![image](https://github.com/user-attachments/assets/0d766e1e-fed5-4adc-b9e0-fd95e98f4314)
+
+![image](https://github.com/user-attachments/assets/126d4e6f-c07b-48a7-aa59-c1fa89e63a63)
+
+![image](https://github.com/user-attachments/assets/9f0f7bc9-ed0e-4084-9fc4-521a8522144f)
+
+![image](https://github.com/user-attachments/assets/d3b47806-c084-40d4-8290-c134baf053e0)
+
+
+# status des services
+
+![image](https://github.com/user-attachments/assets/bb0d190c-a745-4510-8829-f3ed5c426c6f)
+
+
+![image](https://github.com/user-attachments/assets/4d9ae077-fd4c-462e-875b-cdfdcfb65d7c)
+
+![image](https://github.com/user-attachments/assets/b3bfa2e5-beb9-40a8-b359-cfaec53b1e13)
+
+
+
+
 
 
