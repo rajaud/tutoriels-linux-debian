@@ -1369,6 +1369,60 @@ ExecStart avec un S majuscule^^
 ![image](https://github.com/user-attachments/assets/b3bfa2e5-beb9-40a8-b359-cfaec53b1e13)
 
 
+# propriété 
+
+![image](https://github.com/user-attachments/assets/06f7933e-2761-435e-87ec-c3f2c9f432db)
+
+
+##surchargé les propriétés 
+
+![image](https://github.com/user-attachments/assets/28715788-f1f6-414c-a56b-b561ea247312)
+
+pour surcharger les conf des property dans les fichiers de conf, il faut d'abord mettre une ligne null puis la ligne que l'on veut comme ci après : 
+
+![image](https://github.com/user-attachments/assets/ae003ede-bcc8-45c8-b99c-09c05e722b97)
+
+# Les types de services
+
+
+![image](https://github.com/user-attachments/assets/d353afa4-c279-4a65-9067-dbb366fd2d2b)
+
+# systemd restarts et fails 
+
+![image](https://github.com/user-attachments/assets/8297eced-6d7e-49a3-b7fe-506aa056e336)
+
+
+![image](https://github.com/user-attachments/assets/743bdf5f-26fc-448f-afa8-6e8399b0ecf8)
+
+
+![image](https://github.com/user-attachments/assets/03ba805c-10c0-4c93-80b7-c2d13eb9afd4)
+
+
+
+
+![image](https://github.com/user-attachments/assets/815d3141-025b-40fa-b472-d13a8f865896)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
