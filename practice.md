@@ -1403,15 +1403,25 @@ pour surcharger les conf des property dans les fichiers de conf, il faut d'abord
 ![image](https://github.com/user-attachments/assets/815d3141-025b-40fa-b472-d13a8f865896)
 
 
+# systemctl gestion de dépendance 
+
+![image](https://github.com/user-attachments/assets/f5e9d307-fc50-43f6-819e-11f1206f3968)
+
+
+![image](https://github.com/user-attachments/assets/7e6126e8-e608-4a95-9a07-6012eab736be)
+
+
+![image](https://github.com/user-attachments/assets/73ca5856-f626-45e6-b1de-cb6647a98535)
 
 
 
+![image](https://github.com/user-attachments/assets/5f0b8b74-6fe5-4561-8bf9-99184e858af4)
 
 
+![image](https://github.com/user-attachments/assets/9368ba7d-451f-44f4-a89c-b9939a56ed95)
 
 
-
-
+![image](https://github.com/user-attachments/assets/8fc1a516-da0c-4a11-9b05-2441d5ad8d3c)
 
 
 
