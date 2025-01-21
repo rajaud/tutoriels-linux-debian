@@ -1443,6 +1443,61 @@ pour surcharger les conf des property dans les fichiers de conf, il faut d'abord
 un seul exexstart mais possible d'avoir plusieurs execstartpre ou post sans souci
 
 
+# les logs 
+
+![image](https://github.com/user-attachments/assets/3fe614df-e31e-48b2-bf11-de57dd47e63c)
+
+![image](https://github.com/user-attachments/assets/8ac2d451-59f7-4668-92d8-cb9f3da93379)
+
+![image](https://github.com/user-attachments/assets/68483add-a31e-44ce-9792-a314086b1d5a)
+
+![image](https://github.com/user-attachments/assets/739ec8ec-2642-4c7a-b04f-d39a12f087f3)
+
+
+
+![image](https://github.com/user-attachments/assets/f870b8d4-22ad-4ff6-9a4f-5f8d99206f8e)
+
+
+# logs et journalctl
+
+
+
+![image](https://github.com/user-attachments/assets/7636641a-4a8c-4ad7-8e98-8e8745bc7fe4)
+
+pour voir les dernières lignes d'un fichier en continue ; -10 pour les 10 dernières lignes 
+```
+tail -fu /var/log/syslog 
+```
+tail -10 
+head >> prend les premières lignes
+
+
+![image](https://github.com/user-attachments/assets/fe4e6a94-8a14-47f0-8f1b-a9bc1768c7ea)
+
+![image](https://github.com/user-attachments/assets/294b671e-b5ec-42cf-bdb3-10fa6bf47387)
+
+
+![image](https://github.com/user-attachments/assets/9460d0a8-40b7-4089-a35c-9550d4f52316)
+
+![image](https://github.com/user-attachments/assets/f850f85b-b118-4c3d-8a28-d8c78617b0d4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
