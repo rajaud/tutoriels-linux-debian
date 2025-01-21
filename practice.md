@@ -1424,13 +1424,23 @@ pour surcharger les conf des property dans les fichiers de conf, il faut d'abord
 ![image](https://github.com/user-attachments/assets/8fc1a516-da0c-4a11-9b05-2441d5ad8d3c)
 
 
+# les repertoires et env
+
+
+![image](https://github.com/user-attachments/assets/62155799-f0d7-4201-a0b9-7f51bf0bb927)
+
+![image](https://github.com/user-attachments/assets/9112288a-ae93-420c-a81f-c24ca9788f92)
 
 
 
+![image](https://github.com/user-attachments/assets/bd397294-eb44-4262-a0b2-8c8240bc7c16)
 
 
+# start stop pre post 
 
+![image](https://github.com/user-attachments/assets/3594affb-a38d-4741-83fe-482511025cd1)
 
+un seul exexstart mais possible d'avoir plusieurs execstartpre ou post sans souci
 
 
 
