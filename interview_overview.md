@@ -69,7 +69,7 @@
 
 ## Explication via perplexity
 
-# **Port number :**
+# **  ?19 Port number :** 
 
 ## DNS (Domain Name System)
 
