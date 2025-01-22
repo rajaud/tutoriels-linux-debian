@@ -69,6 +69,42 @@
 
 ## Explication via perplexity
 
+
+# **  ?2 check kernel version **
+
+La commande "uname" est un utilitaire Unix/Linux qui sert à afficher des informations sur le système d'exploitation et le matériel de la machine sur laquelle elle est exécutée. Voici ses principales utilisations et options les plus courantes :
+Fonction principale : 
+Afficher des informations système de base comme le nom du noyau, la version, l'architecture matérielle, etc.
+
+Options couramment utilisées : 
+
++ -a (--all) : Affiche toutes les informations disponibles34
++ -s (--kernel-name) : Affiche le nom du noyau (comportement par défaut si aucune option n'est spécifiée)4
++ -n (--nodename) : Affiche le nom d'hôte du système sur le réseau4
++ -r (--kernel-release) : Affiche la version du noyau4
++ -v (--kernel-version) : Affiche la version détaillée du noyau4
++ -m (--machine) : Affiche le nom de l'architecture matérielle de la machine4
++ -p (--processor) : Affiche le type de processeur4
++ -o (--operating-system) : Affiche le nom du système d'exploitation4
+
+Exemples d'utilisation : 
+
+Afficher toutes les informations :
+
+`uname -a`
+
+Afficher uniquement la version du noyau :
+
+`uname -r`
+
+Afficher le nom de la machine et la version du noyau :
+
+`uname -nm`
+
+La commande uname est particulièrement utile pour les administrateurs système et les développeurs qui ont besoin d'obtenir rapidement des informations sur l'environnement système, notamment lors de la configuration de logiciels ou du débogage de problèmes liés au système
+
+
+
 # **  ?19 Port number :** 
 
 ## DNS (Domain Name System)
