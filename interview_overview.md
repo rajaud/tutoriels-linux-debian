@@ -106,8 +106,36 @@ La commande uname est particulièrement utile pour les administrateurs système 
 ![image](https://github.com/user-attachments/assets/d9c2dd85-7891-47ac-8b3e-50ba5e7d7831)
 
 
+# **?7 how to check network interface **
+
+![image](https://github.com/user-attachments/assets/bd445b41-4faf-41fa-8d93-bee3d85fdc03)
+
+# **?8 3 way to adding a user **
+
+![image](https://github.com/user-attachments/assets/f84170f8-053b-4698-8200-8d1a1888f83a)
+
+useradd pour scripting et ansible 
+
+![image](https://github.com/user-attachments/assets/6ed6eb4c-d05b-4ccd-8ffc-e3cc6215ef79)
+
+# **?9 change user password **
+
+![image](https://github.com/user-attachments/assets/6a7eefcb-13ca-465a-8424-621f66ea8bcd)
+
+
+# **?11 déconnexion systeme   **
+
+![image](https://github.com/user-attachments/assets/c5316bf6-c023-4bfc-89e1-154538d995fc)
+
+
+
+
 
 # **  ?19 Port number :** 
+
+![image](https://github.com/user-attachments/assets/3dabfdad-3f9c-41cf-982c-48b9412fd4cf)
+
+
 
 ## DNS (Domain Name System)
 
@@ -179,5 +207,12 @@ Key features of NTP:
   - Digital forensics and log analysis during investigations
   
 NTP is widely used and is essential for maintaining accurate time across networks, which is critical for many cybersecurity applications and protocols.
+
+
+# **?20 DNS file name et located ? **
+
+![image](https://github.com/user-attachments/assets/0ce6ad7a-2009-4b6a-a886-1425205030d3)
+
+
 
 
