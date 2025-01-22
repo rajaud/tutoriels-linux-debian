@@ -103,6 +103,8 @@ Afficher le nom de la machine et la version du noyau :
 
 La commande uname est particulièrement utile pour les administrateurs système et les développeurs qui ont besoin d'obtenir rapidement des informations sur l'environnement système, notamment lors de la configuration de logiciels ou du débogage de problèmes liés au système
 
+![image](https://github.com/user-attachments/assets/d9c2dd85-7891-47ac-8b3e-50ba5e7d7831)
+
 
 
 # **  ?19 Port number :** 
