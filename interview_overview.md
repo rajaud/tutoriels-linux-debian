@@ -214,5 +214,13 @@ NTP is widely used and is essential for maintaining accurate time across network
 ![image](https://github.com/user-attachments/assets/0ce6ad7a-2009-4b6a-a886-1425205030d3)
 
 
+# **?23 IP gateway diff **
+
+![image](https://github.com/user-attachments/assets/1bb94608-48b7-4bc7-8c81-e140ba2afd6f)
+
+
+
+
+
 
 
