@@ -73,9 +73,11 @@ Port number :
 
 ## DNS (Domain Name System)
 
-DNS primarily uses port 53 for both TCP and UDP protocols2.
-UDP port 53: Used for standard DNS queries and responses
-TCP port 53: Used for larger DNS messages that exceed the UDP size limit (traditionally 512 bytes)
+DNS primarily uses port 53 for both TCP and UDP protocols
+
++ UDP port 53: Used for standard DNS queries and responses
++ TCP port 53: Used for larger DNS messages that exceed the UDP size limit (traditionally 512 bytes)
+
 
 
 ## NFS (Network File System)
