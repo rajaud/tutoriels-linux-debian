@@ -82,23 +82,64 @@ DNS primarily uses port 53 for both TCP and UDP protocols
 
 ## NFS (Network File System)
 
-NFS uses multiple ports, with the main ones being1:
-TCP/UDP port 2049: Used by the NFS daemon (nfsd)
-TCP/UDP port 111: Used by the portmapper service
+NFS uses multiple ports, with the main ones being : 
+
++ TCP/UDP port 2049: Used by the NFS daemon (nfsd)
++ TCP/UDP port 111: Used by the portmapper service
+
+
 Additional ports used by NFS-related services include:
 
++ TCP/UDP port 635: Used by mountd (in ONTAP 9)
++ TCP/UDP port 4045: Used by nlockmgr
++ TCP/UDP port 4046: Used by status service
++ TCP/UDP port 4049: Used by rquotad
 
-## TCP/UDP port 635: Used by mountd (in ONTAP 9)
+ ## NTP (Network Time Protocol)
 
-TCP/UDP port 4045: Used by nlockmgr
-TCP/UDP port 4046: Used by status service
-TCP/UDP port 4049: Used by rquotad
-NTP (Network Time Protocol)
-NTP uses port 123, typically with UDP protocol3.
-UDP port 123: Used for NTP time synchronization
-It's important to note that while these are the standard port numbers, they can sometimes be configured differently in specific environments. Always verify the actual port usage in your particular system setup
++ NTP uses port 123, typically with UDP protocol3.
++ UDP port 123: Used for NTP time synchronization
+
+**It's important to note that while these are the standard port numbers, they can sometimes be configured differently in specific environments. Always verify the actual port usage in your particular system setup**
 
 
+# NFS and NTP 
 
+## NFS (Network File System)
+
+NFS is a distributed file system protocol that allows a user on a client computer to access files over a network in a manner similar to how local storage is accessed. 
+
+Key points about NFS include:
+
++ It enables sharing of files and directories between computers on a network
++ Typically used in Unix-like operating systems, but also available for other platforms
++ Allows for centralized management of data and resources
++ Uses RPC (Remote Procedure Call) for communication between clients and servers
+  
+NFS uses multiple ports for its operation, with the main one being:
+
++ TCP/UDP port 2049: Used by the NFS daemon (nfsd)
+
+
+## NTP (Network Time Protocol)
+
+NTP is a networking protocol designed to synchronize the clocks of computers over a network. 
+
+Important aspects of NTP include:
++ Developed by David L. Mills in the 1980s
++ Uses UDP port 123 for communication
++ Aims to synchronize computer clocks with high precision, potentially up to nanosecond accuracy
++ Based on the Coordinated Universal Time (UTC)
++ Uses a hierarchical system of time sources called "strata"
+
+Key features of NTP:
++ Reference time: All clocks are aligned to a reference clock based on UTC.
++ Fault-tolerant: Automatically seeks the best time sources for synchronization and can combine multiple sources to reduce accumulated errors.
++ Hierarchical structure: Uses a system of strata to define the distance from the reference clock.
++ Security implications: Precise time synchronization is crucial for cybersecurity, particularly for:
+  -  One-Time Password (OTP) authentication systems
+  - Digital forensics and log analysis during investigations
+  
+NTP is widely used and is essential for maintaining accurate time across networks, which is critical for many cybersecurity applications and protocols.
 
 
