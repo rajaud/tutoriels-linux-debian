@@ -281,27 +281,120 @@ NTP is widely used and is essential for maintaining accurate time across network
 
 
 
-# **?25 IP change to static **
+# **?42 send /etc **
+
+![image](https://github.com/user-attachments/assets/8c1561b3-c4bb-4f11-8227-a6712ceb0c47)
+
+![image](https://github.com/user-attachments/assets/c9591290-c4ca-490f-b708-de006ffa1dfb)
+
+![image](https://github.com/user-attachments/assets/8af5af9d-13cf-44a7-a326-0e9a74b30226)
+
+
+# **?44 rsyslog **
+
+![image](https://github.com/user-attachments/assets/fa47b029-598a-4e22-9deb-54886b56ab97)
+
+# **?46 untar  **
+
+![image](https://github.com/user-attachments/assets/ae8b9d29-ce50-42f4-b9be-03343013e5f5)
 
 
 
 
 
-# **?25 IP change to static **
+# **?48 nsswitch.conf file **
+
+![image](https://github.com/user-attachments/assets/b1895e8e-3f06-46d7-ab8f-affd80731a89)
 
 
 
 
-# **?25 IP change to static **
+# **?56 mv command rename **
+
+![image](https://github.com/user-attachments/assets/735727c0-5b8e-4d52-b8d6-33055dcb1246)
+
+
+# **?59 trier a l'envers **
+
+![image](https://github.com/user-attachments/assets/2116d4fe-7eff-44e0-bdbf-b6de4b916e55)
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
 
 
 
 
-# **?25 IP change to static **
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
+
+
+
+# **?56 mv command rename **
 
 
 
 
 
-# **?25 IP change to static **
+
+
+
+
+
+
+
+
+
+
 
