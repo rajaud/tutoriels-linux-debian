@@ -219,8 +219,89 @@ NTP is widely used and is essential for maintaining accurate time across network
 ![image](https://github.com/user-attachments/assets/1bb94608-48b7-4bc7-8c81-e140ba2afd6f)
 
 
+# **?25 IP change to static **
+
+![image](https://github.com/user-attachments/assets/6423ecdc-9e13-4a21-b67e-3206939ad678)
+
+![image](https://github.com/user-attachments/assets/a058c7c0-3bdb-46fd-b0a2-8bc17fd64e7e)
+
+![image](https://github.com/user-attachments/assets/d0c31f7c-39a0-4607-a294-f1c192f1621c)
+
+
+
+# **?26 ping hostname with error unknown hosts **
+
+![image](https://github.com/user-attachments/assets/e50a4e97-38b2-496e-bb80-ca9bafc71c7a)
+
+![image](https://github.com/user-attachments/assets/5b622097-990b-4a42-92a1-effa0ac4e298)
+
+![image](https://github.com/user-attachments/assets/c53f0cf6-9460-4af0-bc5a-d099ddc6e5b7)
+
+
+# **?29 type of filesystem **
+
+![image](https://github.com/user-attachments/assets/70507b0a-4fc2-410e-b351-b44c84ae721d)
+
+
+
+# **?32 different types of DNS server **
+
+![image](https://github.com/user-attachments/assets/d07f4d3d-add4-4bcd-90b8-5f134fd735e8)
+
+![image](https://github.com/user-attachments/assets/30cdc697-0a21-41bb-a06e-f3923061e14d)
+
+
+
+# **?33 locate DNS service zone file **
+
+![image](https://github.com/user-attachments/assets/cace38cb-cf2c-43d9-a481-2ca1d69fd405)
+
+
+
+# **?36 first column of a file  **
+
+![image](https://github.com/user-attachments/assets/c1b2efef-ac68-46d6-989b-95fac5a3cfec)
+
+
+
+# **?38 nslookup and dig diff **
+
+![image](https://github.com/user-attachments/assets/9f89f873-bec6-4d65-9d56-3cb63385e17a)
+
+
+![image](https://github.com/user-attachments/assets/ff2042f0-13ed-4982-93f7-a3f66c85852d)
 
 
 
 
+# **?41 subnet **
+
+![image](https://github.com/user-attachments/assets/9cc1b631-cf57-4f3c-8590-08110d44fb83)
+
+
+
+
+# **?25 IP change to static **
+
+
+
+
+
+# **?25 IP change to static **
+
+
+
+
+# **?25 IP change to static **
+
+
+
+
+# **?25 IP change to static **
+
+
+
+
+
+# **?25 IP change to static **
 
