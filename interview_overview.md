@@ -417,11 +417,100 @@ NTP is widely used and is essential for maintaining accurate time across network
 ![image](https://github.com/user-attachments/assets/b2e4a432-1e3a-46bd-a25f-50682ada026f)
 
 
+# **?140 netstat **
+
+![image](https://github.com/user-attachments/assets/426f8817-0a3b-47e7-9a7c-75cf831bb5f4)
+
+
+
+# **?141 raccourci clavier **
+
+![image](https://github.com/user-attachments/assets/045ab4ad-9236-4f4e-9f14-13c988f3260c)
+
+
+# **?143 type of bash **
+
+![image](https://github.com/user-attachments/assets/dc873f54-a9d0-4bb5-8918-d2d20a8ecca6)
+
+
+
+# **?167 soft link  **
+
+![image](https://github.com/user-attachments/assets/d7d21e51-8ed4-417f-8781-325ef505276e)
+
+
+
+# **?168 delete message in log file  **
+
+![image](https://github.com/user-attachments/assets/c6a1ccb8-16e0-40cd-b548-b531c6413b6f)
+
+
+
 # **?56 mv command rename **
 
 
 
 
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+
+# **?56 mv command rename **
+
+
+
+
+# **?56 mv command rename **
 
 
 
