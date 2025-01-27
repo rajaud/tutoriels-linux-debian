@@ -318,67 +318,103 @@ NTP is widely used and is essential for maintaining accurate time across network
 
 ![image](https://github.com/user-attachments/assets/2116d4fe-7eff-44e0-bdbf-b6de4b916e55)
 
-# **?56 mv command rename **
+# **?63 bonding NIC **
+
+![image](https://github.com/user-attachments/assets/2269c8af-b6ca-4538-a941-b1de3213e838)
+
+![image](https://github.com/user-attachments/assets/efb2e08d-f044-467b-9c4d-5798617c4b38)
 
 
+# **?64 awk et cut **
 
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
+![image](https://github.com/user-attachments/assets/108d452b-70a0-47c3-a272-ef6f84eaaf49)
 
 
+# **?66 df cooamnd  **
 
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
+![image](https://github.com/user-attachments/assets/c03bb099-fa2b-4a24-9886-eb230ba529b1)
 
 
+# **?74 display file'zs content **
 
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
+![image](https://github.com/user-attachments/assets/f49442f1-4f33-4585-8838-e1f05b90943a)
 
 
+# **?77 swap space **
 
+![image](https://github.com/user-attachments/assets/6456b4cb-2581-4971-a4b6-703836618480)
 
-# **?56 mv command rename **
-
-
-
-
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
-
-
-
-# **?56 mv command rename **
+![image](https://github.com/user-attachments/assets/55cb8ae6-79a9-4a4e-872b-3764ed90fb07)
 
 
 
 
-# **?56 mv command rename **
+# **?78 inode **
+
+![image](https://github.com/user-attachments/assets/95476c4e-acbf-4c69-b2de-8f40fce74d04)
+
+![image](https://github.com/user-attachments/assets/f6def095-5632-4773-a8a2-48fe187a833d)
 
 
 
-# **?56 mv command rename **
+# **?79 kernel tuning **
 
+![image](https://github.com/user-attachments/assets/024e3e69-1cf5-478c-9803-62a0885ff515)
+
+![image](https://github.com/user-attachments/assets/f5e61fec-f77f-428d-878d-72297ea36fdb)
+
+
+# **?83 hardware inforamtion **
+
+![image](https://github.com/user-attachments/assets/af041075-6964-4c0a-bce9-e5ef0e565872)
+
+![image](https://github.com/user-attachments/assets/adf11403-8fa6-41d7-853e-a5e602331f88)
+
+![image](https://github.com/user-attachments/assets/5e4ac8cc-608c-4055-9e5d-2a171d6dfbc8)
+
+
+
+
+# **?84 mac adresse  **
+
+![image](https://github.com/user-attachments/assets/6853ba4b-90bf-4bf9-9811-926fd84ab094)
+
+
+# **?86 uniq and sed command **
+
+![image](https://github.com/user-attachments/assets/0de819dc-3db5-44c2-99d7-131e2642e1b6)
+
+
+# **?88 tar gzip unzip **
+
+![image](https://github.com/user-attachments/assets/b6ffa5fe-7b90-4ff8-b274-05f4d5e8a7e1)
+
+
+# **?105 mail server record in DNS **
+
+![image](https://github.com/user-attachments/assets/6fcfa9da-f102-44d9-9de9-2a777553a5b8)
+
+
+
+
+
+# **?117 init 6 for rebbot **
+
+![image](https://github.com/user-attachments/assets/782da688-036c-4221-ab70-3b47cd01f5bc)
+
+
+
+# **?122 how to remove package **
+
+![image](https://github.com/user-attachments/assets/e428e612-5b86-405a-90b7-a41355cf8b2d)
+
+
+
+
+
+# **?137 SAN NAS diff **
+
+![image](https://github.com/user-attachments/assets/b2e4a432-1e3a-46bd-a25f-50682ada026f)
 
 
 # **?56 mv command rename **
