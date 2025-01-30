@@ -446,12 +446,13 @@ NTP is widely used and is essential for maintaining accurate time across network
 
 
 
-# **?56 mv command rename **
+# **?174 all package in system  **
+
+![image](https://github.com/user-attachments/assets/54237ea4-ff1b-4926-8418-2e1f16003c39)
 
 
 
-
-# **?56 mv command rename **
+# **?183  **
 
 
 
