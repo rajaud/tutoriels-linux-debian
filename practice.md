@@ -1,5 +1,11 @@
 # Suivi des vidéos et utilisation pratique avec exemeple en copie d'écran 
 
+
+# roadmap 
+
+![image](https://github.com/user-attachments/assets/b41713bb-8ec9-41f1-9be5-fffae36c3ee3)
+
+
 ## Les différentes couches systèmes 
 
 ![image](https://github.com/user-attachments/assets/1a7af8a7-873a-4117-8f47-bf0167f0eccc)
